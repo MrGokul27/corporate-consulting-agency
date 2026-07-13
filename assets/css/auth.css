@@ -66,6 +66,70 @@
     0 25px 60px rgba(0, 0, 0, 0.35),
     0 0 0 1px rgba(199, 154, 97, 0.12);
   backdrop-filter: blur(20px);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  animation: authCardEntrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes authCardEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96) rotateX(6deg);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0);
+    filter: blur(0);
+  }
+}
+
+/* Staggered form controls entry */
+@keyframes authFieldReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.auth-card form > div,
+.auth-card form > button,
+.auth-card form > p {
+  opacity: 0;
+  animation: authFieldReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.auth-card form > div:nth-child(1) {
+  animation-delay: 150ms;
+}
+.auth-card form > div:nth-child(2) {
+  animation-delay: 220ms;
+}
+.auth-card form > div:nth-child(3) {
+  animation-delay: 290ms;
+}
+.auth-card form > div:nth-child(4) {
+  animation-delay: 360ms;
+}
+.auth-card form > div:nth-child(5) {
+  animation-delay: 430ms;
+}
+.auth-card form > div:nth-child(6) {
+  animation-delay: 500ms;
+}
+.auth-card form > button {
+  animation-delay: 570ms;
+}
+.auth-card form > p {
+  animation-delay: 640ms;
+}
+
+.auth-back-home {
+  opacity: 0;
+  animation: authFieldReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 710ms;
 }
 
 /* Logo */

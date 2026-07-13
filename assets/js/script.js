@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Hide preloader after 2 seconds
+  const preloader = document.getElementById("site-preloader");
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add("hide");
+      preloader.addEventListener("transitionend", () => preloader.remove(), {
+        once: true,
+      });
+    }, 2000);
+  }
+
   // Determine directory depth for component loading
   // Check if current page is inside 'pages' subdirectory
   const isSubpage = window.location.pathname.includes("/pages/");
@@ -62,12 +73,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 4. Client-side Form Validation
   initContactForm();
+
+  // 5. Initialize Scroll-Reveal Animations
+  if (preloader) {
+    setTimeout(initScrollReveal, 2000);
+  } else {
+    setTimeout(initScrollReveal, 100);
+  }
 });
 
-/**
- * Adjusts all link href attributes inside loaded components so they point to the correct path
- * depending on whether the current page is in the root directory or pages/ directory.
- */
 function adjustComponentLinks(container, isSubpage) {
   const links = container.querySelectorAll("a");
   links.forEach((link) => {
@@ -84,14 +98,20 @@ function adjustComponentLinks(container, isSubpage) {
 
     if (isSubpage) {
       if (href.startsWith("pages/")) {
-        // We are already inside pages/, so replace "pages/about.html" with "about.html"
         link.setAttribute("href", href.replace("pages/", ""));
       } else if (href === "index.html") {
-        // Point index.html back to the root
         link.setAttribute("href", "../index.html");
       }
-    } else {
-      // We are in the root directory. Keep the paths as defined in the component.
+    }
+  });
+
+  // Fix image src paths: components use "../assets/" which breaks on root index.html
+  const images = container.querySelectorAll("img");
+  images.forEach((img) => {
+    const src = img.getAttribute("src");
+    if (!src || src.startsWith("http")) return;
+    if (!isSubpage && src.startsWith("../")) {
+      img.setAttribute("src", src.replace("../", ""));
     }
   });
 }
@@ -258,5 +278,36 @@ function initContactForm() {
       }, 1500);
     }
     form.classList.add("was-validated");
+  });
+}
+
+/**
+ * Native Scroll Reveal Animation using IntersectionObserver.
+ * Triggers entrance animations for elements when they enter the viewport.
+ */
+function initScrollReveal() {
+  document.body.classList.add("page-loaded");
+
+  const revealElements = document.querySelectorAll(".reveal-on-scroll");
+  if (revealElements.length === 0) return;
+
+  // Configuration: trigger when 10% of the element is visible
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px 0px -20px 0px",
+    threshold: 0.05,
+  };
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("revealed");
+        observer.unobserve(entry.target); // Animate once
+      }
+    });
+  }, observerOptions);
+
+  revealElements.forEach((el) => {
+    revealObserver.observe(el);
   });
 }

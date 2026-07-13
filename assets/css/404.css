@@ -598,3 +598,34 @@
     display: none;
   }
 }
+
+/* Premium Content Bobbing & Button Glow animations */
+@keyframes errContentBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+.err-content {
+  animation: errContentBob 6s ease-in-out infinite;
+}
+
+.err-btn-primary,
+.err-btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.err-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(199, 154, 97, 0.35) !important;
+}
+
+.err-btn-secondary:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.08) !important;
+}

@@ -40,6 +40,78 @@
     <link href="assets/css/styles.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- Preloader -->
+    <div id="site-preloader">
+      <div class="pl-bg-glow pl-glow-tl"></div>
+      <div class="pl-bg-glow pl-glow-br"></div>
+      <div class="pl-grid-overlay"></div>
+
+      <div class="pl-center">
+        <!-- Spinning rings -->
+        <div class="pl-rings">
+          <div class="pl-ring pl-ring-1"></div>
+          <div class="pl-ring pl-ring-2"></div>
+          <div class="pl-ring pl-ring-3"></div>
+          <!-- Orbiting gold dot -->
+          <div class="pl-orbit-track">
+            <div class="pl-orbit-dot"></div>
+          </div>
+          <!-- Logo -->
+          <div class="pl-logo-wrap">
+            <img
+              src="assets/images/logoStackly.webp"
+              alt="Stackly"
+              class="pl-logo-img"
+            />
+          </div>
+        </div>
+
+        <!-- Corner brackets -->
+        <div class="pl-bracket pl-bracket-tl"></div>
+        <div class="pl-bracket pl-bracket-tr"></div>
+        <div class="pl-bracket pl-bracket-bl"></div>
+        <div class="pl-bracket pl-bracket-br"></div>
+
+        <!-- Brand text -->
+        <div class="pl-brand">
+          <div class="pl-brand-name">STACKLY</div>
+          <div class="pl-brand-tagline">
+            Corporate Consulting &amp; Advisory
+          </div>
+        </div>
+
+        <!-- Gold rule with diamond -->
+        <div class="pl-rule">
+          <span class="pl-rule-line"></span>
+          <span class="pl-rule-diamond"></span>
+          <span class="pl-rule-line"></span>
+        </div>
+
+        <!-- Progress -->
+        <div class="pl-bar-track">
+          <div class="pl-bar-fill"></div>
+          <div class="pl-bar-glow"></div>
+        </div>
+        <div class="pl-status">
+          Initializing Advisory Platform<span class="pl-ellipsis"
+            ><span>.</span><span>.</span><span>.</span></span
+          >
+        </div>
+      </div>
+
+      <!-- Floating particles -->
+      <div class="pl-particles">
+        <span class="pl-p pl-p1"></span>
+        <span class="pl-p pl-p2"></span>
+        <span class="pl-p pl-p3"></span>
+        <span class="pl-p pl-p4"></span>
+        <span class="pl-p pl-p5"></span>
+        <span class="pl-p pl-p6"></span>
+        <span class="pl-p pl-p7"></span>
+        <span class="pl-p pl-p8"></span>
+      </div>
+    </div>
+
     <!-- Header Placeholder (Loaded via script.js) -->
     <div id="header-placeholder"></div>
 
@@ -57,19 +129,22 @@
           <div class="row align-items-center g-5">
             <div class="col-lg-7">
               <div class="pe-lg-4 text-center text-lg-start">
-                <span class="hero-subtitle d-inline-block"
+                <span
+                  class="hero-subtitle d-inline-block reveal-on-scroll reveal-hero"
                   >Stackly Corporate Consulting</span
                 >
-                <h1 class="hero-title text-white">
+                <h1
+                  class="hero-title text-white reveal-on-scroll reveal-hero delay-100"
+                >
                   Elevate Your Enterprise with Strategic Clarity
                 </h1>
-                <p class="hero-desc">
+                <p class="hero-desc reveal-on-scroll reveal-hero delay-200">
                   We deliver bespoke advisory services in mergers &
                   acquisitions, capital restructuring, and digital acceleration,
                   empowering global corporations to unlock sustainable value.
                 </p>
                 <div
-                  class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3"
+                  class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3 reveal-on-scroll reveal-hero delay-300"
                 >
                   <a
                     href="#"
@@ -87,7 +162,9 @@
             <div class="col-lg-5">
               <div class="row g-3 justify-content-center">
                 <div class="col-sm-6 col-md-4 col-lg-12">
-                  <div class="stat-badge d-flex align-items-center gap-3">
+                  <div
+                    class="stat-badge d-flex align-items-center gap-3 reveal-on-scroll reveal-stat delay-100"
+                  >
                     <div class="fs-1 fw-bold text-accent">15+</div>
                     <div class="text-white-50 fs-7 lh-sm">
                       Years of Advisory Leadership
@@ -95,7 +172,9 @@
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-12">
-                  <div class="stat-badge d-flex align-items-center gap-3">
+                  <div
+                    class="stat-badge d-flex align-items-center gap-3 reveal-on-scroll reveal-stat delay-250"
+                  >
                     <div class="fs-1 fw-bold text-accent">$2.5B+</div>
                     <div class="text-white-50 fs-7 lh-sm">
                       Corporate Capital Managed
@@ -103,7 +182,9 @@
                   </div>
                 </div>
                 <div class="col-sm-6 col-md-4 col-lg-12">
-                  <div class="stat-badge d-flex align-items-center gap-3">
+                  <div
+                    class="stat-badge d-flex align-items-center gap-3 reveal-on-scroll reveal-stat delay-400"
+                  >
                     <div class="fs-1 fw-bold text-accent">98%</div>
                     <div class="text-white-50 fs-7 lh-sm">
                       Client Retention Rate
@@ -124,7 +205,7 @@
       >
         <div class="container">
           <div class="row align-items-center g-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal-on-scroll">
               <div class="position-relative pe-lg-4">
                 <div
                   class="border-accent-decorator"
@@ -147,7 +228,7 @@
                 />
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal-on-scroll delay-200">
               <span
                 class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
                 >About Our Firm</span
@@ -227,7 +308,7 @@
         style="padding: 100px 0"
       >
         <div class="container methodology-container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Our Execution Model</span
@@ -243,7 +324,7 @@
 
           <div class="methodology-stepper">
             <!-- Step 1 -->
-            <div class="methodology-step">
+            <div class="methodology-step reveal-on-scroll reveal-step">
               <div class="methodology-icon-circle">01</div>
               <span class="methodology-step-num">Phase One</span>
               <h4 class="fw-bold fs-5 text-primary mb-3">Diagnose & Audit</h4>
@@ -254,7 +335,9 @@
             </div>
 
             <!-- Step 2 -->
-            <div class="methodology-step">
+            <div
+              class="methodology-step reveal-on-scroll reveal-step delay-100"
+            >
               <div class="methodology-icon-circle">02</div>
               <span class="methodology-step-num">Phase Two</span>
               <h4 class="fw-bold fs-5 text-primary mb-3">Strategy Design</h4>
@@ -265,7 +348,9 @@
             </div>
 
             <!-- Step 3 -->
-            <div class="methodology-step">
+            <div
+              class="methodology-step reveal-on-scroll reveal-step delay-200"
+            >
               <div class="methodology-icon-circle">03</div>
               <span class="methodology-step-num">Phase Three</span>
               <h4 class="fw-bold fs-5 text-primary mb-3">Align & Deploy</h4>
@@ -276,7 +361,9 @@
             </div>
 
             <!-- Step 4 -->
-            <div class="methodology-step">
+            <div
+              class="methodology-step reveal-on-scroll reveal-step delay-300"
+            >
               <div class="methodology-icon-circle">04</div>
               <span class="methodology-step-num">Phase Four</span>
               <h4 class="fw-bold fs-5 text-primary mb-3">Measure & Scale</h4>
@@ -293,7 +380,7 @@
       <section class="py-5 bg-primary text-white">
         <div class="container">
           <div class="row align-items-center justify-content-between g-4">
-            <div class="col-lg-8">
+            <div class="col-lg-8 reveal-on-scroll">
               <h3 class="fw-bold font-heading mb-2 text-white">
                 Ready to Transform Your Corporate Strategy?
               </h3>
@@ -316,7 +403,7 @@
       <!-- Services Section -->
       <section id="services" class="py-6 bg-light" style="padding: 100px 0">
         <div class="container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Our Capabilities</span
@@ -332,7 +419,7 @@
 
           <div class="row g-4 mt-2">
             <!-- Service 1 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll">
               <div class="service-card">
                 <span class="service-bg-number">01</span>
                 <div class="service-icon-box">
@@ -351,7 +438,7 @@
             </div>
 
             <!-- Service 2 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll delay-100">
               <div class="service-card">
                 <span class="service-bg-number">02</span>
                 <div class="service-icon-box">
@@ -370,7 +457,7 @@
             </div>
 
             <!-- Service 3 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll delay-200">
               <div class="service-card">
                 <span class="service-bg-number">03</span>
                 <div class="service-icon-box">
@@ -388,7 +475,7 @@
             </div>
 
             <!-- Service 4 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll">
               <div class="service-card">
                 <span class="service-bg-number">04</span>
                 <div class="service-icon-box">
@@ -406,7 +493,7 @@
             </div>
 
             <!-- Service 5 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll delay-100">
               <div class="service-card">
                 <span class="service-bg-number">05</span>
                 <div class="service-icon-box">
@@ -424,7 +511,7 @@
             </div>
 
             <!-- Service 6 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll delay-200">
               <div class="service-card">
                 <span class="service-bg-number">06</span>
                 <div class="service-icon-box">
@@ -447,7 +534,7 @@
       <!-- Sector Expertise Section -->
       <section id="sectors" class="py-6 bg-white" style="padding: 100px 0">
         <div class="container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Global Specialization</span
@@ -463,7 +550,7 @@
 
           <div class="row g-4 mt-2">
             <!-- Sector 1 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll">
               <div class="sector-card">
                 <img
                   src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=600&q=80"
@@ -484,7 +571,7 @@
             </div>
 
             <!-- Sector 2 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll delay-100">
               <div class="sector-card">
                 <img
                   src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80"
@@ -505,7 +592,7 @@
             </div>
 
             <!-- Sector 3 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll delay-200">
               <div class="sector-card">
                 <img
                   src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80"
@@ -526,7 +613,7 @@
             </div>
 
             <!-- Sector 4 -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll delay-300">
               <div class="sector-card">
                 <img
                   src="https://images.unsplash.com/photo-1530026405186-ed1ea0ac7a63?auto=format&fit=crop&w=600&q=80"
@@ -553,7 +640,7 @@
       <section class="py-6 bg-white" style="padding: 100px 0">
         <div class="container">
           <div class="row align-items-center g-5">
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal-on-scroll">
               <span
                 class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
                 >Our Value Proposition</span
@@ -638,7 +725,7 @@
               </div>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 reveal-on-scroll delay-200">
               <div class="accordion shadow-sm" id="whyChooseAccordion">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingOne">
@@ -734,7 +821,7 @@
       <section id="dashboard" class="py-6 bg-white" style="padding: 100px 0">
         <div class="container">
           <div class="dashboard-container">
-            <div class="row align-items-center mb-5">
+            <div class="row align-items-center mb-5 reveal-on-scroll">
               <div class="col-lg-7">
                 <span
                   class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
@@ -761,7 +848,7 @@
 
             <div class="row g-4">
               <!-- Metric 1 -->
-              <div class="col-md-6 col-lg-3">
+              <div class="col-md-6 col-lg-3 reveal-on-scroll">
                 <div class="db-widget-card">
                   <div class="db-status-bar">
                     <span class="text-white-50 fs-8 fw-semibold"
@@ -782,6 +869,7 @@
                     preserveAspectRatio="none"
                   >
                     <path
+                      class="db-sparkline-path"
                       d="M0,25 Q15,22 30,12 T60,18 T90,2 T100,5"
                       fill="none"
                       stroke="var(--accent-color)"
@@ -792,7 +880,7 @@
               </div>
 
               <!-- Metric 2 -->
-              <div class="col-md-6 col-lg-3">
+              <div class="col-md-6 col-lg-3 reveal-on-scroll delay-100">
                 <div class="db-widget-card">
                   <div class="db-status-bar">
                     <span class="text-white-50 fs-8 fw-semibold"
@@ -813,6 +901,7 @@
                     preserveAspectRatio="none"
                   >
                     <path
+                      class="db-sparkline-path"
                       d="M0,28 Q15,25 30,22 T60,10 T90,8 T100,2"
                       fill="none"
                       stroke="var(--accent-color)"
@@ -823,7 +912,7 @@
               </div>
 
               <!-- Metric 3 -->
-              <div class="col-md-6 col-lg-3">
+              <div class="col-md-6 col-lg-3 reveal-on-scroll delay-200">
                 <div class="db-widget-card">
                   <div class="db-status-bar">
                     <span class="text-white-50 fs-8 fw-semibold"
@@ -844,6 +933,7 @@
                     preserveAspectRatio="none"
                   >
                     <path
+                      class="db-sparkline-path"
                       d="M0,20 Q15,10 30,15 T60,5 T90,12 T100,0"
                       fill="none"
                       stroke="var(--accent-color)"
@@ -854,7 +944,7 @@
               </div>
 
               <!-- Metric 4 -->
-              <div class="col-md-6 col-lg-3">
+              <div class="col-md-6 col-lg-3 reveal-on-scroll delay-300">
                 <div class="db-widget-card">
                   <div class="db-status-bar">
                     <span class="text-white-50 fs-8 fw-semibold"
@@ -875,6 +965,7 @@
                     preserveAspectRatio="none"
                   >
                     <path
+                      class="db-sparkline-path"
                       d="M0,25 Q15,20 30,22 T60,8 T90,5 T100,1"
                       fill="none"
                       stroke="var(--accent-color)"
@@ -891,7 +982,7 @@
       <!-- Case Studies / Projects Section -->
       <section id="projects" class="py-6 bg-light" style="padding: 100px 0">
         <div class="container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Our Success Stories</span
@@ -907,7 +998,7 @@
 
           <div class="row g-4 mt-2">
             <!-- Project 1 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll">
               <div class="project-card">
                 <img
                   src="./assets/images/home/home-our-success-stories1.webp"
@@ -927,7 +1018,7 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll delay-100">
               <div class="project-card">
                 <img
                   src="./assets/images/home/home-our-success-stories2.webp"
@@ -945,7 +1036,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="col-md-6 col-lg-4">
+            <div class="col-md-6 col-lg-4 reveal-on-scroll delay-200">
               <div class="project-card">
                 <img
                   src="./assets/images/home/home-our-success-stories3.webp"
@@ -971,7 +1062,7 @@
       <section class="py-6 bg-white" style="padding: 100px 0">
         <div class="container">
           <div class="row justify-content-center text-center mb-5">
-            <div class="col-lg-8">
+            <div class="col-lg-8 reveal-on-scroll">
               <span
                 class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
                 >Client Testimonials</span
@@ -983,7 +1074,7 @@
           </div>
 
           <div class="row justify-content-center">
-            <div class="col-lg-9">
+            <div class="col-lg-9 reveal-on-scroll delay-200">
               <div
                 id="testimonialCarousel"
                 class="carousel slide"
@@ -1100,7 +1191,7 @@
       <!-- Executive Team Section -->
       <section id="team" class="py-6 bg-light" style="padding: 100px 0">
         <div class="container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Our Leadership</span
@@ -1116,7 +1207,7 @@
 
           <div class="row g-4 mt-2">
             <!-- Consultant 1 -->
-            <div class="col-md-4">
+            <div class="col-md-4 reveal-on-scroll">
               <div class="team-card">
                 <div class="team-img-wrapper">
                   <img
@@ -1149,7 +1240,7 @@
             </div>
 
             <!-- Consultant 2 -->
-            <div class="col-md-4">
+            <div class="col-md-4 reveal-on-scroll delay-100">
               <div class="team-card">
                 <div class="team-img-wrapper">
                   <img
@@ -1182,7 +1273,7 @@
             </div>
 
             <!-- Consultant 3 -->
-            <div class="col-md-4">
+            <div class="col-md-4 reveal-on-scroll delay-200">
               <div class="team-card">
                 <div class="team-img-wrapper">
                   <img
@@ -1220,7 +1311,7 @@
       <!-- Global Advisory Network Section -->
       <section id="network" class="py-6 bg-light" style="padding: 100px 0">
         <div class="container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Worldwide Footprint</span
@@ -1236,7 +1327,7 @@
 
           <div class="row g-4 mt-2">
             <!-- Dallas HQ -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll">
               <div class="office-card">
                 <div class="office-map-container">
                   <div class="office-map-grid"></div>
@@ -1269,7 +1360,7 @@
             </div>
 
             <!-- London -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll delay-100">
               <div class="office-card">
                 <div class="office-map-container">
                   <div class="office-map-grid"></div>
@@ -1302,7 +1393,7 @@
             </div>
 
             <!-- Singapore -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll delay-200">
               <div class="office-card">
                 <div class="office-map-container">
                   <div class="office-map-grid"></div>
@@ -1335,7 +1426,7 @@
             </div>
 
             <!-- Tokyo -->
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 reveal-on-scroll delay-300">
               <div class="office-card">
                 <div class="office-map-container">
                   <div class="office-map-grid"></div>
@@ -1375,7 +1466,7 @@
       <!-- Insights / Blog Section -->
       <section class="py-6 bg-white" style="padding: 100px 0">
         <div class="container">
-          <div class="text-center mb-5 max-w-600 mx-auto">
+          <div class="text-center mb-5 max-w-600 mx-auto reveal-on-scroll">
             <span
               class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
               >Corporate Insights</span
@@ -1391,7 +1482,7 @@
 
           <div class="row g-4 mt-2">
             <!-- Blog Post 1 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 reveal-on-scroll">
               <div class="insight-card">
                 <div class="insight-img-wrapper">
                   <img
@@ -1425,7 +1516,7 @@
             </div>
 
             <!-- Blog Post 2 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 reveal-on-scroll delay-100">
               <div class="insight-card">
                 <div class="insight-img-wrapper">
                   <img
@@ -1458,7 +1549,7 @@
             </div>
 
             <!-- Blog Post 3 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6 reveal-on-scroll delay-200">
               <div class="insight-card">
                 <div class="insight-img-wrapper">
                   <img
@@ -1499,7 +1590,7 @@
         <div class="container">
           <div class="row g-5">
             <!-- Left Side Info -->
-            <div class="col-lg-5">
+            <div class="col-lg-5 reveal-on-scroll">
               <span
                 class="text-accent fw-bold text-uppercase tracking-wider fs-7 d-block mb-2"
                 >Connect With Us</span
@@ -1566,7 +1657,7 @@
             </div>
 
             <!-- Right Side Form -->
-            <div class="col-lg-7" id="consultation">
+            <div class="col-lg-7 reveal-on-scroll delay-200" id="consultation">
               <div class="bg-white p-5 rounded-4 shadow-sm border border-light">
                 <h4 class="fw-bold mb-4 text-primary font-heading">
                   Consultation Inquiry Form

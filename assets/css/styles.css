@@ -1,4 +1,436 @@
-/* Import Google Fonts */
+/* =============================================
+   PRELOADER — Premium Rebuild
+   ============================================= */
+#site-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #081c19;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
+}
+#site-preloader.hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Ambient radial glows */
+.pl-bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(80px);
+}
+.pl-glow-tl {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(12, 43, 39, 0.9) 0%,
+    transparent 70%
+  );
+  top: -200px;
+  left: -150px;
+}
+.pl-glow-br {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(199, 154, 97, 0.08) 0%,
+    transparent 70%
+  );
+  bottom: -250px;
+  right: -200px;
+}
+
+/* Dot-grid texture overlay */
+.pl-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* ---- Center stage ---- */
+.pl-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  z-index: 2;
+}
+
+/* ---- Ring system ---- */
+.pl-rings {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pl-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+}
+.pl-ring-1 {
+  width: 180px;
+  height: 180px;
+  border-color: rgba(199, 154, 97, 0.18);
+  border-top-color: #c79a61;
+  animation: plSpin 1.6s linear infinite;
+}
+.pl-ring-2 {
+  width: 148px;
+  height: 148px;
+  border-color: rgba(199, 154, 97, 0.08);
+  border-right-color: rgba(199, 154, 97, 0.5);
+  animation: plSpin 2.4s linear infinite reverse;
+}
+.pl-ring-3 {
+  width: 116px;
+  height: 116px;
+  border-color: rgba(255, 255, 255, 0.04);
+  border-bottom-color: rgba(199, 154, 97, 0.3);
+  animation: plSpin 3.2s linear infinite;
+}
+@keyframes plSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Orbiting dot on outer ring */
+.pl-orbit-track {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  animation: plSpin 1.6s linear infinite;
+}
+.pl-orbit-dot {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #c79a61;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 3px rgba(199, 154, 97, 0.6);
+}
+
+/* Logo inside rings */
+.pl-logo-wrap {
+  position: relative;
+  z-index: 5;
+  width: 82px;
+  height: 82px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  border: 1px solid rgba(199, 154, 97, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  animation: plLogoPulse 2.5s ease-in-out infinite;
+}
+.pl-logo-img {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+@keyframes plLogoPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(199, 154, 97, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(199, 154, 97, 0);
+  }
+}
+
+/* ---- Corner brackets ---- */
+.pl-bracket {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-color: #c79a61;
+  border-style: solid;
+  opacity: 0.7;
+}
+.pl-bracket-tl {
+  top: -8px;
+  left: -8px;
+  border-width: 2px 0 0 2px;
+}
+.pl-bracket-tr {
+  top: -8px;
+  right: -8px;
+  border-width: 2px 2px 0 0;
+}
+.pl-bracket-bl {
+  bottom: -8px;
+  left: -8px;
+  border-width: 0 0 2px 2px;
+}
+.pl-bracket-br {
+  bottom: -8px;
+  right: -8px;
+  border-width: 0 2px 2px 0;
+}
+
+/* ---- Brand text ---- */
+.pl-brand {
+  text-align: center;
+  animation: plFadeUp 0.7s ease 0.2s both;
+}
+.pl-brand-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 8px;
+  color: #ffffff;
+  line-height: 1;
+}
+.pl-brand-tagline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  color: #c79a61;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+@keyframes plFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Gold rule with diamond ---- */
+.pl-rule {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 220px;
+  animation: plFadeUp 0.7s ease 0.35s both;
+}
+.pl-rule-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 154, 97, 0.5));
+}
+.pl-rule-line:last-child {
+  background: linear-gradient(90deg, rgba(199, 154, 97, 0.5), transparent);
+}
+.pl-rule-diamond {
+  width: 7px;
+  height: 7px;
+  background: #c79a61;
+  transform: rotate(45deg);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px rgba(199, 154, 97, 0.6);
+}
+
+/* ---- Progress bar ---- */
+.pl-bar-track {
+  width: 220px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  animation: plFadeUp 0.7s ease 0.45s both;
+}
+.pl-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #0c2b27, #c79a61);
+  border-radius: 3px;
+  animation: plBarFill 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.pl-bar-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(199, 154, 97, 0.5),
+    transparent
+  );
+  animation: plBarShine 2s ease-in-out infinite;
+}
+@keyframes plBarFill {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 65%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes plBarShine {
+  0% {
+    transform: translateX(-60px);
+  }
+  100% {
+    transform: translateX(220px);
+  }
+}
+
+/* ---- Status text ---- */
+.pl-status {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  animation: plFadeUp 0.7s ease 0.55s both;
+}
+.pl-ellipsis span {
+  animation: plDot 1.4s infinite;
+  opacity: 0;
+}
+.pl-ellipsis span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.pl-ellipsis span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+@keyframes plDot {
+  0%,
+  80%,
+  100% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* ---- Floating particles ---- */
+.pl-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.pl-p {
+  position: absolute;
+  border-radius: 50%;
+  background: #c79a61;
+  opacity: 0;
+  animation: plFloat linear infinite;
+}
+.pl-p1 {
+  width: 3px;
+  height: 3px;
+  left: 8%;
+  bottom: 0;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+.pl-p2 {
+  width: 5px;
+  height: 5px;
+  left: 18%;
+  bottom: 0;
+  animation-duration: 7s;
+  animation-delay: 1s;
+}
+.pl-p3 {
+  width: 2px;
+  height: 2px;
+  left: 32%;
+  bottom: 0;
+  animation-duration: 4.5s;
+  animation-delay: 0.5s;
+}
+.pl-p4 {
+  width: 4px;
+  height: 4px;
+  left: 50%;
+  bottom: 0;
+  animation-duration: 6s;
+  animation-delay: 1.5s;
+}
+.pl-p5 {
+  width: 3px;
+  height: 3px;
+  left: 65%;
+  bottom: 0;
+  animation-duration: 5.5s;
+  animation-delay: 0.8s;
+}
+.pl-p6 {
+  width: 5px;
+  height: 5px;
+  left: 75%;
+  bottom: 0;
+  animation-duration: 7.5s;
+  animation-delay: 0.3s;
+}
+.pl-p7 {
+  width: 2px;
+  height: 2px;
+  left: 85%;
+  bottom: 0;
+  animation-duration: 4s;
+  animation-delay: 1.2s;
+}
+.pl-p8 {
+  width: 4px;
+  height: 4px;
+  left: 92%;
+  bottom: 0;
+  animation-duration: 6.5s;
+  animation-delay: 0.6s;
+}
+@keyframes plFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0.5);
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) scale(1.2);
+  }
+}
+/* =============================================
+   END PRELOADER
+   ============================================= */
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
 
 /* Color Variables & Custom Design System */
@@ -1370,4 +1802,598 @@ body {
   border-top: 1px solid rgba(12, 43, 39, 0.05);
   padding: 20px 24px !important;
   line-height: 1.6;
+}
+
+/* =============================================
+   SERVICES PAGE ENHANCEMENTS & PREMIUM HOVERS
+   ============================================= */
+
+/* 1. Detailed Advisory Service Cards */
+.advisory-service-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px 30px;
+  border: 1px solid rgba(12, 43, 39, 0.05);
+  border-top: 4px solid var(--accent-color) !important;
+  box-shadow: 0 10px 30px rgba(12, 43, 39, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: hidden;
+  height: 100%;
+}
+.advisory-service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(12, 43, 39, 0.08);
+  border-color: rgba(199, 154, 97, 0.25);
+  border-top-color: var(--primary-color) !important;
+}
+.advisory-service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(199, 154, 97, 0.05) 0%,
+    transparent 60%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.advisory-service-card:hover::after {
+  opacity: 1;
+}
+.advisory-service-card .service-icon-box {
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.advisory-service-card:hover .service-icon-box {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  color: #ffffff !important;
+  transform: scale(1.08) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(12, 43, 39, 0.15);
+}
+
+/* 2. Engagement Cycle (Methodology) Cards */
+.methodology-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border-top: 4px solid var(--accent-color) !important;
+}
+.methodology-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(199, 154, 97, 0.15) !important;
+  border-top-color: var(--primary-color) !important;
+}
+.methodology-card-accent {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.methodology-card-accent:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(12, 43, 39, 0.25) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+/* 3. Sectors We Optimize Cards */
+.service-sector-card {
+  position: relative;
+  background: #f8faf9;
+  border-radius: 16px;
+  padding: 30px;
+  border-left: 4px solid var(--accent-color) !important;
+  border: 1px solid rgba(12, 43, 39, 0.04);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+}
+.service-sector-card:hover {
+  transform: translateY(-6px);
+  background: #ffffff;
+  border-color: rgba(199, 154, 97, 0.2) !important;
+  border-left-color: var(--primary-color) !important;
+  box-shadow: 0 15px 35px rgba(12, 43, 39, 0.07) !important;
+}
+.service-sector-card i {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease;
+}
+.service-sector-card:hover i {
+  transform: scale(1.18) rotate(8deg);
+  color: var(--primary-color) !important;
+}
+
+/* 4. Advisory Feedback Testimonial Cards */
+.service-testimonial-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px;
+  border: 1px solid rgba(12, 43, 39, 0.04);
+  box-shadow: 0 10px 30px rgba(12, 43, 39, 0.02);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+}
+.service-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(12, 43, 39, 0.06);
+  border-color: rgba(199, 154, 97, 0.2);
+}
+.service-testimonial-card img {
+  transition: transform 0.4s ease;
+}
+.service-testimonial-card:hover img {
+  transform: scale(1.08);
+}
+
+/* 5. Section A: Strategic Differentiator Cards */
+.differentiator-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 35px 30px;
+  border: 1px solid rgba(12, 43, 39, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.015);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.differentiator-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(12, 43, 39, 0.02) 0%,
+    rgba(199, 154, 97, 0.02) 100%
+  );
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.4s ease;
+}
+.differentiator-card:hover::before {
+  opacity: 1;
+}
+.differentiator-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(12, 43, 39, 0.06);
+  border-color: rgba(199, 154, 97, 0.25);
+}
+.diff-icon-box {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  background: rgba(199, 154, 97, 0.1);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 20px;
+  transition: all 0.35s ease;
+}
+.differentiator-card:hover .diff-icon-box {
+  background: var(--primary-color);
+  color: #ffffff;
+  transform: scale(1.08) rotate(5deg);
+}
+
+/* 6. Section B: Interactive Strategic Diagnostic Tool */
+.diagnostic-container {
+  background: linear-gradient(135deg, #0c2b27 0%, #061a17 100%);
+  border-radius: 24px;
+  padding: 50px;
+  color: #ffffff;
+  box-shadow: 0 20px 50px rgba(8, 28, 25, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.diagnostic-option-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
+}
+.diagnostic-option-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(199, 154, 97, 0.3);
+  transform: translateY(-3px);
+}
+.diagnostic-option-card.selected {
+  background: rgba(199, 154, 97, 0.12);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 15px rgba(199, 154, 97, 0.2);
+}
+.diagnostic-option-card.selected .option-icon {
+  background: var(--accent-color);
+  color: #ffffff;
+}
+.option-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+.diagnostic-result-box {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+.diagnostic-result-box.active {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(199, 154, 97, 0.2);
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 7. Section C: Accordion FAQs Hover Interactions */
+.accordion-item {
+  transition: all 0.3s ease;
+}
+.accordion-item:hover {
+  border-color: rgba(199, 154, 97, 0.3) !important;
+  box-shadow: 0 8px 20px rgba(12, 43, 39, 0.03);
+}
+@media (max-width: 768px) {
+  .diagnostic-container {
+    padding: 30px 20px;
+  }
+}
+
+/* ==========================================================================
+   8. PREMIUM SCROLL-REVEAL & PAGE ANIMATIONS
+   ========================================================================== */
+
+/* ── Base Scroll-Reveal System ── */
+.reveal-on-scroll {
+  opacity: 0;
+  transition:
+    opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+/* Default state: slide up */
+.reveal-on-scroll:not(.reveal-timeline-left):not(.reveal-timeline-right):not(
+    .reveal-contact-left
+  ):not(.reveal-skew-up):not(.reveal-pricing-rise):not(.reveal-team-deal):not(
+    .reveal-clip-diagonal
+  ) {
+  transform: translateY(35px);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) skewX(0) skewY(0) !important;
+}
+
+/* ── Staggered Animation Delay Helpers ── */
+.stagger-group > *:nth-child(1) {
+  transition-delay: 50ms;
+}
+.stagger-group > *:nth-child(2) {
+  transition-delay: 150ms;
+}
+.stagger-group > *:nth-child(3) {
+  transition-delay: 250ms;
+}
+.stagger-group > *:nth-child(4) {
+  transition-delay: 350ms;
+}
+.stagger-group > *:nth-child(5) {
+  transition-delay: 450ms;
+}
+.stagger-group > *:nth-child(6) {
+  transition-delay: 550ms;
+}
+
+/* Custom delays for direct classes */
+.delay-100 {
+  transition-delay: 100ms !important;
+}
+.delay-150 {
+  transition-delay: 150ms !important;
+}
+.delay-200 {
+  transition-delay: 200ms !important;
+}
+.delay-250 {
+  transition-delay: 250ms !important;
+}
+.delay-300 {
+  transition-delay: 300ms !important;
+}
+.delay-400 {
+  transition-delay: 400ms !important;
+}
+.delay-500 {
+  transition-delay: 500ms !important;
+}
+
+/* ── Home Page Animations ── */
+
+/* Hero text reveal */
+.reveal-hero {
+  transform: translateY(30px);
+  filter: blur(4px);
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-hero.revealed {
+  filter: blur(0);
+}
+
+/* Hero Stat Counters scale in */
+.reveal-stat {
+  transform: scale(0.85);
+  transition:
+    opacity 0.9s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.9s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Methodology Steps bounce reveal */
+.reveal-step {
+  transform: translateY(30px) scale(0.93);
+  transition:
+    opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15),
+    transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+/* EBITDA Sparkline Path draw */
+.db-sparkline-path {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 250;
+  transition: stroke-dashoffset 2.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 400ms;
+}
+.revealed .db-sparkline-path {
+  stroke-dashoffset: 0;
+}
+
+/* ── About Page Timelines ── */
+
+.timeline-container {
+  position: relative;
+}
+.timeline-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(199, 154, 97, 0) 0%,
+    rgba(199, 154, 97, 0.4) 15%,
+    rgba(199, 154, 97, 0.4) 85%,
+    rgba(199, 154, 97, 0) 100%
+  );
+  z-index: 1;
+  transition: height 2s cubic-bezier(0.25, 1, 0.5, 1);
+  height: 0%;
+}
+.timeline-container.revealed::before {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .timeline-container::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-container .position-relative::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    border: 3px solid #f8f9fa; /* matches bg-light */
+    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(199, 154, 97, 0.2);
+    transform: translateY(-50%) scale(0);
+    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition-delay: 500ms;
+  }
+  .timeline-container .col-md-6.text-md-end.position-relative::after {
+    right: -8px;
+  }
+  .timeline-container .col-md-6.text-md-start.position-relative::after {
+    left: -8px;
+  }
+  .timeline-container.revealed .position-relative::after {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+/* Timeline Cards entry paths */
+.reveal-timeline-left {
+  transform: translateX(-50px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-timeline-right {
+  transform: translateX(50px);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Services Page 3D Deck ── */
+.reveal-skew-up {
+  transform: translateY(60px) skewY(3deg) scale(0.96);
+  transform-origin: top center;
+  transition:
+    opacity 0.9s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.9s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ── Projects Page Diagonal Clip Path ── */
+.reveal-clip-diagonal {
+  display: block;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition:
+    clip-path 1.4s cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 0.8s ease;
+}
+.reveal-clip-diagonal.revealed {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%) !important;
+}
+
+/* ── Pricing Page Elevate & Shimmer ── */
+.reveal-pricing-rise {
+  transform: translateY(70px) scale(0.96);
+  transition:
+    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Focus elevation on popular card */
+.pricing-popular-glow {
+  position: relative;
+  border: 1px solid rgba(199, 154, 97, 0.3);
+  animation: popularShimmer 4s ease-in-out infinite alternate;
+}
+@keyframes popularShimmer {
+  0% {
+    box-shadow: 0 10px 30px rgba(12, 43, 39, 0.05);
+    border-color: rgba(199, 154, 97, 0.3);
+  }
+  100% {
+    box-shadow: 0 15px 35px rgba(199, 154, 97, 0.18);
+    border-color: rgba(199, 154, 97, 0.8);
+  }
+}
+
+/* Checklist items staggered slide-in */
+.reveal-check-list li {
+  opacity: 0;
+  transform: translateX(-12px);
+  transition:
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.revealed.reveal-check-list li {
+  opacity: 1;
+  transform: translateX(0);
+}
+.revealed.reveal-check-list li:nth-child(1) {
+  transition-delay: 50ms;
+}
+.revealed.reveal-check-list li:nth-child(2) {
+  transition-delay: 150ms;
+}
+.revealed.reveal-check-list li:nth-child(3) {
+  transition-delay: 250ms;
+}
+.revealed.reveal-check-list li:nth-child(4) {
+  transition-delay: 350ms;
+}
+.revealed.reveal-check-list li:nth-child(5) {
+  transition-delay: 450ms;
+}
+
+/* ── Team Page Card Deal ── */
+.reveal-team-deal {
+  transform: translateY(60px) rotate(-1.5deg);
+  transition:
+    opacity 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Team Social Icons spring reveal on hover */
+.team-img-wrapper {
+  overflow: hidden;
+}
+.team-social-overlay .team-social-icon {
+  opacity: 0;
+  transform: translateY(25px);
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.4s ease;
+}
+.team-card:hover .team-social-overlay .team-social-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+.team-card:hover .team-social-overlay .team-social-icon:nth-child(1) {
+  transition-delay: 40ms;
+}
+.team-card:hover .team-social-overlay .team-social-icon:nth-child(2) {
+  transition-delay: 120ms;
+}
+
+/* ── Contact Page Form & Info Stagger ── */
+.reveal-contact-left {
+  transform: translateX(-40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-form-stagger input,
+.reveal-form-stagger select,
+.reveal-form-stagger textarea,
+.reveal-form-stagger button {
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.revealed.reveal-form-stagger input,
+.revealed.reveal-form-stagger select,
+.revealed.reveal-form-stagger textarea,
+.revealed.reveal-form-stagger button {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Form inputs staggers */
+.revealed.reveal-form-stagger .col-md-6:nth-child(1) input {
+  transition-delay: 50ms;
+}
+.revealed.reveal-form-stagger .col-md-6:nth-child(2) input {
+  transition-delay: 100ms;
+}
+.revealed.reveal-form-stagger .col-md-6:nth-child(3) input {
+  transition-delay: 150ms;
+}
+.revealed.reveal-form-stagger .col-md-6:nth-child(4) select {
+  transition-delay: 200ms;
+}
+.revealed.reveal-form-stagger .col-12:nth-child(5) textarea {
+  transition-delay: 250ms;
+}
+.revealed.reveal-form-stagger .col-12:nth-child(6) input {
+  transition-delay: 300ms;
+}
+.revealed.reveal-form-stagger button {
+  transition-delay: 350ms;
 }
