@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page Not Found | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="The page you are looking for could not be located. Return to Stackly Corporate Consulting."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../assets/images/logoStackly.webp"
+    />
+    <link href="../assets/css/styles.css" rel="stylesheet" />
+    <link href="../assets/css/404.css" rel="stylesheet" />
+  </head>
+  <body class="err-body">
+    <!-- Ambient background particles -->
+    <div class="err-bg" aria-hidden="true">
+      <div class="err-orb err-orb-1"></div>
+      <div class="err-orb err-orb-2"></div>
+      <div class="err-orb err-orb-3"></div>
+      <div class="err-grid"></div>
+    </div>
+
+    <!-- Floating decorative shapes -->
+    <div class="err-shapes" aria-hidden="true">
+      <div class="err-shape err-shape-ring-1"></div>
+      <div class="err-shape err-shape-ring-2"></div>
+      <div class="err-shape err-shape-dot-cluster"></div>
+    </div>
+
+    <div class="err-wrapper">
+      <!-- Logo -->
+      <a href="../index.html" class="err-logo-link">
+        <img
+          src="../assets/images/logoStackly.webp"
+          alt="Stackly Logo"
+          class="err-logo"
+        />
+      </a>
+
+      <!-- Main Content -->
+      <div class="err-content">
+        <!-- 404 Glitch Number -->
+        <div class="err-code-wrap" aria-hidden="true">
+          <span class="err-code-digit" data-text="4">4</span>
+          <div class="err-code-icon-wrap">
+            <div class="err-code-icon-ring"></div>
+            <div class="err-code-icon-ring err-code-icon-ring-2"></div>
+            <i class="fas fa-chart-line err-code-icon"></i>
+          </div>
+          <span class="err-code-digit" data-text="4">4</span>
+        </div>
+
+        <!-- Status badge -->
+        <div class="err-badge">
+          <span class="err-badge-dot"></span>
+          <span>Page Not Found</span>
+        </div>
+
+        <h1 class="err-title">Strategic Detour Ahead</h1>
+        <p class="err-desc">
+          The page you're navigating to has been restructured, relocated, or
+          does not exist in our advisory portfolio. Let us redirect your capital
+          of attention to the right destination.
+        </p>
+
+        <!-- Primary CTA -->
+        <div class="err-actions">
+          <a href="../index.html" class="err-btn-primary">
+            <i class="fas fa-arrow-left me-2"></i>Return to Homepage
+          </a>
+          <button class="err-btn-secondary" onclick="history.back()">
+            <i class="fas fa-rotate-left me-2"></i>Go Back
+          </button>
+        </div>
+
+        <!-- Auto-redirect countdown -->
+        <p class="err-redirect-note">
+          Automatically redirecting to homepage in
+          <span id="errCountdown">15</span>s
+        </p>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="err-footer">
+        <span>© 2026 Stackly Advisory Group</span>
+        <!-- <span class="err-footer-sep">·</span>
+        <a href="contact.html">Report an Issue</a>
+        <span class="err-footer-sep">·</span>
+        <a href="../index.html">Stackly Home</a> -->
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Countdown auto-redirect
+      let seconds = 15;
+      const countdownEl = document.getElementById("errCountdown");
+      const timer = setInterval(() => {
+        seconds--;
+        if (countdownEl) countdownEl.textContent = seconds;
+        if (seconds <= 0) {
+          clearInterval(timer);
+          window.location.href = "../index.html";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
