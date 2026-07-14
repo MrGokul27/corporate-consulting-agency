@@ -613,6 +613,64 @@
     return `<span class="db-stat-trend ${dir}"><i class="fas ${icon}"></i>${trend}</span>`;
   }
 
+  const FOLDER_MAP = {
+    executive: "executive-or-csuite",
+    manager: "senior-manager",
+    consultant: "consultants",
+    analyst: "analyst",
+    client: "clients",
+  };
+
+  const FILE_MAP = {
+    executive: {
+      overview: "dashboard.html",
+      performance: "performance-kpi.html",
+      portfolio: "portfolio.html",
+      team: "team.html",
+      reports: "board-reports.html",
+      strategy: "strategy-map.html",
+      financials: "financials.html",
+      budget: "budget-allocation.html",
+    },
+    manager: {
+      overview: "dashboard.html",
+      projects: "projects.html",
+      team: "my-team.html",
+      tasks: "task-board.html",
+      timeline: "timeline.html",
+      resources: "resources.html",
+      reports: "reports.html",
+      analytics: "analytics.html",
+    },
+    consultant: {
+      overview: "dashboard.html",
+      engagements: "engagements.html",
+      deliverables: "deliverables.html",
+      clients: "client-accounts.html",
+      meetings: "meetings.html",
+      library: "resource-library.html",
+      templates: "templates.html",
+    },
+    analyst: {
+      overview: "dashboard.html",
+      data: "data-sources.html",
+      models: "models-and-insights.html",
+      reports: "reports.html",
+      scheduled: "scheduled-reports.html",
+      workspace: "workspace.html",
+      exports: "exports.html",
+    },
+    client: {
+      overview: "dashboard.html",
+      projects: "my-projects.html",
+      reports: "reports-and-docs.html",
+      messages: "messages.html",
+      meetings: "meetings.html",
+      invoices: "invoices.html",
+      contracts: "contracts.html",
+    },
+  };
+
   // ── Build Sidebar ────────────────────────────────────────────
   function buildSidebar(role, config) {
     const nav = config.nav;
@@ -624,8 +682,16 @@
         const badge = item.badge
           ? `<span class="db-nav-badge">${item.badge}</span>`
           : "";
+        let href = "#";
+        if (item.id !== "overview") {
+          const folder = FOLDER_MAP[role];
+          const file = FILE_MAP[role][item.id];
+          if (folder && file) {
+            href = `dashboard/${folder}/${file}`;
+          }
+        }
         html += `
-          <a href="#" class="db-nav-item${item.active ? " active" : ""}" data-section="${item.id}">
+          <a href="${href}" class="db-nav-item${item.active ? " active" : ""}" data-section="${item.id}">
             <span class="db-nav-icon"><i class="fas ${item.icon}"></i></span>
             <span>${item.label}</span>
             ${badge}
@@ -862,7 +928,9 @@
       .addEventListener("click", function (e) {
         const item = e.target.closest(".db-nav-item");
         if (!item) return;
-        e.preventDefault();
+        if (item.getAttribute("href") === "#") {
+          e.preventDefault();
+        }
         document
           .querySelectorAll(".db-nav-item")
           .forEach((n) => n.classList.remove("active"));

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Track your consulting project progress and milestones."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">My Projects 📁</h1>
+              <p class="db-greeting-sub">
+                Track active advisory project sprints, milestone completions,
+                and consultant assignments.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Project 1 Details -->
+          <div class="col-12 col-xl-6">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-cubes"></i>Digital Transformation
+                </h6>
+                <span class="db-status active">Phase 2</span>
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted mb-4"
+                  style="font-size: 0.82rem; line-height: 1.5"
+                >
+                  Modernizing core legacy ERP systems, setting up consolidated
+                  Snowflake data warehouses, and training predictive models to
+                  forecast billing cycles.
+                </p>
+
+                <div class="mb-4">
+                  <div
+                    class="d-flex justify-content-between mb-1"
+                    style="font-size: 0.82rem"
+                  >
+                    <span>Overall Project Progress:</span>
+                    <strong style="color: var(--accent-color)">72%</strong>
+                  </div>
+                  <div class="db-progress-track" style="height: 8px">
+                    <div class="db-progress-fill" style="width: 72%"></div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <h6
+                    style="
+                      font-size: 0.82rem;
+                      font-weight: 700;
+                      color: var(--primary-color);
+                    "
+                    class="mb-2"
+                  >
+                    <i class="fas fa-list-check me-2"></i>Milestone Timeline
+                  </h6>
+                  <div
+                    style="font-size: 0.78rem"
+                    class="d-flex flex-column gap-2 text-muted"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-circle-check text-success me-2"></i
+                        >Phase 1: Legacy Database Audit</span
+                      >
+                      <strong class="text-success">Completed</strong>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-circle-check text-success me-2"></i
+                        >Phase 2: Snowflake Integration</span
+                      >
+                      <strong class="text-success">Completed</strong>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-spinner fa-spin text-accent me-2"></i
+                        >Phase 3: Revenue Forecast Deployment</span
+                      >
+                      <strong class="text-accent">In Progress</strong>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-circle-dot me-2"></i>Phase 4: Staff
+                        Training & Handoff</span
+                      >
+                      <strong>Pending</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex justify-content-between align-items-center text-muted"
+                  style="font-size: 0.75rem"
+                >
+                  <span>Lead Consultant: **A. Chen**</span>
+                  <span>Target Due: **Dec 15**</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 Details -->
+          <div class="col-12 col-xl-6">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-cubes"></i>Market Entry Strategy
+                </h6>
+                <span class="db-status review">Scoping</span>
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted mb-4"
+                  style="font-size: 0.82rem; line-height: 1.5"
+                >
+                  Comprehensive competitive landscaping, retail expansion
+                  cost-modeling, and regulatory compliance mapping for expansion
+                  into Southeast Asian sectors.
+                </p>
+
+                <div class="mb-4">
+                  <div
+                    class="d-flex justify-content-between mb-1"
+                    style="font-size: 0.82rem"
+                  >
+                    <span>Overall Project Progress:</span>
+                    <strong style="color: var(--accent-color)">45%</strong>
+                  </div>
+                  <div class="db-progress-track" style="height: 8px">
+                    <div class="db-progress-fill" style="width: 45%"></div>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <h6
+                    style="
+                      font-size: 0.82rem;
+                      font-weight: 700;
+                      color: var(--primary-color);
+                    "
+                    class="mb-2"
+                  >
+                    <i class="fas fa-list-check me-2"></i>Milestone Timeline
+                  </h6>
+                  <div
+                    style="font-size: 0.78rem"
+                    class="d-flex flex-column gap-2 text-muted"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-circle-check text-success me-2"></i
+                        >Competitor Benchmarking Matrix</span
+                      >
+                      <strong class="text-success">Completed</strong>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-spinner fa-spin text-accent me-2"></i
+                        >Expansion CapEx Cost Model v2</span
+                      >
+                      <strong class="text-accent">In Review</strong>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-circle-dot me-2"></i>Compliance Matrix
+                        Approval</span
+                      >
+                      <strong>Pending</strong>
+                    </div>
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <span
+                        ><i class="fas fa-circle-dot me-2"></i>Executive Summary
+                        Deck</span
+                      >
+                      <strong>Pending</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="d-flex justify-content-between align-items-center text-muted"
+                  style="font-size: 0.75rem"
+                >
+                  <span>Lead Consultant: **S. Patel**</span>
+                  <span>Target Due: **Jan 08**</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

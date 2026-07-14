@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Messages | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Communicate with your consulting and account team."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Direct Messages 💬</h1>
+              <p class="db-greeting-sub">
+                Chat in real-time with your lead consultants, program directors,
+                and account support team.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-3 mt-2">
+          <!-- Channels list (Col-4) -->
+          <div class="col-12 col-md-4 col-xl-3">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-comments"></i>Conversations
+                </h6>
+              </div>
+              <div
+                class="list-group list-group-flush"
+                style="font-size: 0.82rem"
+              >
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action d-flex align-items-center gap-2 active border-0 py-3 bg-primary text-white"
+                  style="border-radius: 6px"
+                >
+                  <div
+                    class="bg-white text-primary rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                    style="width: 30px; height: 30px; font-size: 0.75rem"
+                  >
+                    AC
+                  </div>
+                  <div>
+                    <div class="fw-bold">A. Chen (Lead)</div>
+                    <span style="font-size: 0.7rem; opacity: 0.8"
+                      >Online ● Active SOW</span
+                    >
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action d-flex align-items-center gap-2 border-0 py-3"
+                >
+                  <div
+                    class="bg-secondary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                    style="width: 30px; height: 30px; font-size: 0.75rem"
+                  >
+                    SP
+                  </div>
+                  <div>
+                    <div class="fw-bold">S. Patel (Partner)</div>
+                    <span class="text-muted" style="font-size: 0.7rem"
+                      >Away ● Financials</span
+                    >
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  class="list-group-item list-group-item-action d-flex align-items-center gap-2 border-0 py-3"
+                >
+                  <div
+                    class="bg-secondary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                    style="width: 30px; height: 30px; font-size: 0.75rem"
+                  >
+                    HD
+                  </div>
+                  <div>
+                    <div class="fw-bold">Integration Desk</div>
+                    <span class="text-muted" style="font-size: 0.7rem"
+                      >Offline ● Helpdesk</span
+                    >
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Window (Col-8) -->
+          <div class="col-12 col-md-8 col-xl-9">
+            <div
+              class="db-section-card d-flex flex-column"
+              style="height: 500px"
+            >
+              <div class="db-section-header border-bottom">
+                <div class="d-flex align-items-center gap-2">
+                  <div
+                    class="bg-primary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                    style="width: 32px; height: 32px; font-size: 0.78rem"
+                  >
+                    AC
+                  </div>
+                  <div>
+                    <h6 class="mb-0 fw-bold" style="font-size: 0.88rem">
+                      Alex Chen
+                    </h6>
+                    <span class="text-muted" style="font-size: 0.7rem"
+                      >Primary Advisory Lead for Digital Transformation
+                      SOW</span
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message Stream -->
+              <div
+                class="flex-grow-1 p-3 overflow-y-auto bg-light bg-opacity-30 d-flex flex-column gap-3"
+                style="font-size: 0.82rem"
+              >
+                <!-- Incoming -->
+                <div class="d-flex align-items-start gap-2 max-w-75">
+                  <div
+                    class="bg-secondary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center flex-shrink-0"
+                    style="width: 28px; height: 28px; font-size: 0.7rem"
+                  >
+                    AC
+                  </div>
+                  <div class="p-3 bg-white border rounded">
+                    <p
+                      class="mb-1 text-muted"
+                      style="font-size: 0.72rem; font-weight: 600"
+                    >
+                      Alex Chen ● Yesterday 04:12 PM
+                    </p>
+                    <p class="mb-0">
+                      Hi there! Just wanted to check if you've had a chance to
+                      review the Q3 Revenue Breakdown report PDF? Our analyst
+                      team generated it yesterday and we want to ensure it
+                      aligns with your expectations before the board
+                      presentation on Thursday.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Outgoing -->
+                <div
+                  class="d-flex align-items-start gap-2 max-w-75 align-self-end text-end"
+                >
+                  <div class="p-3 bg-primary text-white rounded text-start">
+                    <p
+                      class="mb-1 text-white text-opacity-75"
+                      style="font-size: 0.72rem; font-weight: 600"
+                    >
+                      You ● Today 09:30 AM
+                    </p>
+                    <p class="mb-0">
+                      Yes, Alex! We reviewed the PDF and the numbers look solid.
+                      The revenue forecaster trends are particularly insightful.
+                      Let's make sure to discuss the Vantage Group risk markers
+                      in detail during our session tomorrow.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Incoming -->
+                <div class="d-flex align-items-start gap-2 max-w-75">
+                  <div
+                    class="bg-secondary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center flex-shrink-0"
+                    style="width: 28px; height: 28px; font-size: 0.7rem"
+                  >
+                    AC
+                  </div>
+                  <div class="p-3 bg-white border rounded">
+                    <p
+                      class="mb-1 text-muted"
+                      style="font-size: 0.72rem; font-weight: 600"
+                    >
+                      Alex Chen ● Today 10:14 AM
+                    </p>
+                    <p class="mb-0">
+                      Perfect! I will make sure the Vantage risk model metrics
+                      are front and center on the agenda slide. Let's meet
+                      tomorrow at 10 AM.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Message input form -->
+              <div class="p-3 border-top bg-white">
+                <form id="chat-input-form" class="d-flex gap-2">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm flex-grow-1"
+                    placeholder="Write a secure message to Alex..."
+                    required
+                  />
+                  <button type="submit" class="btn btn-sm btn-accent px-3">
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

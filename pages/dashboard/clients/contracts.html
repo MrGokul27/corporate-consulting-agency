@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contracts | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View and manage active consulting agreements."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Contracts & Agreements 📜</h1>
+              <p class="db-greeting-sub">
+                Review active consulting service agreements, non-disclosure
+                contracts, and scopes of work.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Active Agreements Table -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-file-contract"></i>Active Agreements
+                </h6>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Document Name</th>
+                      <th>Reference Code</th>
+                      <th>Effective Date</th>
+                      <th>Expiry Date</th>
+                      <th>Value</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Master Services Agreement (MSA)
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >General engagement term framework</span
+                        >
+                      </td>
+                      <td>#MSA-2024-001</td>
+                      <td>Jan 01, 2024</td>
+                      <td>Dec 31, 2025</td>
+                      <td>--</td>
+                      <td><span class="db-status completed">Signed</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline-primary py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-download me-1"></i>Download PDF
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Statement of Work (SOW) - Digital Transformation
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >Phase 2 implementation roadmap advisory</span
+                        >
+                      </td>
+                      <td>#SOW-DT-02</td>
+                      <td>Oct 01, 2024</td>
+                      <td>Dec 15, 2024</td>
+                      <td class="fw-bold">$1,200,000.00</td>
+                      <td><span class="db-status completed">Active</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline-primary py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-download me-1"></i>Download PDF
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Non-Disclosure Agreement (NDA)
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >Mutual data protection clause</span
+                        >
+                      </td>
+                      <td>#NDA-ST-889</td>
+                      <td>Sep 15, 2023</td>
+                      <td>Sep 15, 2028</td>
+                      <td>--</td>
+                      <td><span class="db-status completed">Signed</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-outline-primary py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-download me-1"></i>Download PDF
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <!-- Contract Requests / Renewals -->
+          <div class="col-12 col-md-6">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-arrows-rotate"></i>Agreement Renewals &
+                  Amending
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted"
+                  style="font-size: 0.82rem; line-height: 1.6"
+                >
+                  If you need to expand your active Statement of Work (SOW)
+                  scope or request additional consulting hours, please contact
+                  your primary account lead. Contract modifications take
+                  approximately 3-5 business days to draft, approve, and
+                  finalize.
+                </p>
+                <button
+                  class="btn btn-accent mt-2 py-2 px-3"
+                  style="font-size: 0.85rem; font-weight: 600"
+                >
+                  <i class="fas fa-file-circle-plus me-2"></i>Request Scope
+                  Extension
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal Contact info -->
+          <div class="col-12 col-md-6">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-gavel"></i>Legal Contact & Compliance
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted"
+                  style="font-size: 0.82rem; line-height: 1.6"
+                >
+                  For compliance queries, audit reports, or security protocol
+                  filings related to our active services agreement, please reach
+                  out directly to the Stackly Legal Operations desk.
+                </p>
+                <div
+                  class="d-flex align-items-center gap-2 mt-3"
+                  style="font-size: 0.82rem"
+                >
+                  <i class="fas fa-envelope text-accent"></i>
+                  <span class="fw-bold">legal@stackly-consulting.com</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

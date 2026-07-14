@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View team program analytics and milestone velocities."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Program Analytics 📊</h1>
+              <p class="db-greeting-sub">
+                Track delivery velocity, milestone completions, billable hour
+                allocations, and program health indices.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Stat cards -->
+          <div class="col-12 col-md-4">
+            <div class="db-stat-card">
+              <div class="db-stat-icon emerald">
+                <i class="fas fa-diagram-project"></i>
+              </div>
+              <div class="db-stat-value">5</div>
+              <div class="db-stat-label">Active Sprints</div>
+              <span class="db-stat-trend up"
+                ><i class="fas fa-arrow-trend-up"></i> +1 this week</span
+              >
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="db-stat-card">
+              <div class="db-stat-icon gold">
+                <i class="fas fa-list-check"></i>
+              </div>
+              <div class="db-stat-value">28</div>
+              <div class="db-stat-label">Open Sprints Tasks</div>
+              <span class="db-stat-trend down"
+                ><i class="fas fa-arrow-trend-down"></i> -4 tasks</span
+              >
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="db-stat-card">
+              <div class="db-stat-icon teal">
+                <i class="fas fa-circle-check"></i>
+              </div>
+              <div class="db-stat-value">84%</div>
+              <div class="db-stat-label">On-Time Delivery Rate</div>
+              <span class="db-stat-trend up"
+                ><i class="fas fa-arrow-trend-up"></i> +6% vs Q2</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <!-- Analytics detail section -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-gauge-high"></i>Deliverable Completions
+                </h6>
+              </div>
+              <div class="db-section-body d-flex flex-column gap-4">
+                <div>
+                  <div
+                    class="d-flex justify-content-between mb-1"
+                    style="font-size: 0.82rem"
+                  >
+                    <span
+                      >Meridian Capital Integration SOW: **72%** complete</span
+                    >
+                    <strong>72%</strong>
+                  </div>
+                  <div class="db-progress-track" style="height: 6px">
+                    <div class="db-progress-fill" style="width: 72%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    class="d-flex justify-content-between mb-1"
+                    style="font-size: 0.82rem"
+                  >
+                    <span>Vantage Retail Scoping SOW: **45%** complete</span>
+                    <strong>45%</strong>
+                  </div>
+                  <div class="db-progress-track" style="height: 6px">
+                    <div class="db-progress-fill" style="width: 45%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

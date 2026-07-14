@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resources | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Manage external resources, tooling subscriptions, and assets."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Program Resources 🛠️</h1>
+              <p class="db-greeting-sub">
+                Manage software logins, tool subscriptions, external contractor
+                staffing lists, and request new assets.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Tooling Subscriptions -->
+          <div class="col-12 col-xl-7">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-cubes"></i>Active Software Subscriptions
+                </h6>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Software Tool</th>
+                      <th>Account Tier</th>
+                      <th>Monthly Expense</th>
+                      <th>Next Renewal</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold" style="font-size: 0.85rem">
+                        Snowflake Enterprise Data Cloud
+                      </td>
+                      <td>25 TB Storage Node</td>
+                      <td>$12,400.00</td>
+                      <td>Dec 01, 2024</td>
+                      <td><span class="db-status completed">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold" style="font-size: 0.85rem">
+                        Salesforce CRM Cloud API
+                      </td>
+                      <td>50 Advisor seats</td>
+                      <td>$4,200.00</td>
+                      <td>Dec 15, 2024</td>
+                      <td><span class="db-status completed">Active</span></td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold" style="font-size: 0.85rem">
+                        Slack Pro & Huddles
+                      </td>
+                      <td>120 Active seats</td>
+                      <td>$1,500.00</td>
+                      <td>Nov 30, 2024</td>
+                      <td><span class="db-status completed">Active</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resource Request Form -->
+          <div class="col-12 col-xl-5">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-plus"></i>Request Resource / License
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <form
+                  id="resource-request-form"
+                  class="needs-validation"
+                  novalidate
+                >
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Resource Category</label
+                    >
+                    <select class="form-select form-select-sm" required>
+                      <option value="" disabled selected>
+                        Select category
+                      </option>
+                      <option value="lic">Software Seat/License</option>
+                      <option value="contr">
+                        External Contractor Allocation
+                      </option>
+                      <option value="hw">Hardware Asset</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Description</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="e.g. 1 seat for Snowflake"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Business Justification</label
+                    >
+                    <textarea
+                      class="form-control form-control-sm"
+                      rows="3"
+                      placeholder="Provide justification for executive sign-off..."
+                      required
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-accent w-100 py-2"
+                    style="font-size: 0.85rem; font-weight: 600"
+                  >
+                    <i class="fas fa-paper-plane me-2"></i>Submit Resource
+                    Request
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

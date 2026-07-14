@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scheduled Reports | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Configure automated report deliveries to stakeholders."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Scheduled Reports ⏰</h1>
+              <p class="db-greeting-sub">
+                Automate report compilation and configure scheduled email
+                notifications for executives, clients, and partners.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Setup Schedule Form -->
+          <div class="col-12 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-calendar-plus"></i>Configure Schedule
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <form
+                  id="schedule-report-form"
+                  class="needs-validation"
+                  novalidate
+                >
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Select Active Report</label
+                    >
+                    <select class="form-select form-select-sm" required>
+                      <option value="" disabled selected>
+                        Select report to schedule
+                      </option>
+                      <option value="q3-rev">
+                        Q3 Corporate Financial Health Index
+                      </option>
+                      <option value="churn">
+                        Client Churn Risk Predictor Logs
+                      </option>
+                      <option value="apex">Apex Healthcare Risk Profile</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Delivery Frequency</label
+                    >
+                    <select class="form-select form-select-sm" required>
+                      <option value="daily">Every Morning (08:00 AM)</option>
+                      <option value="weekly" selected>
+                        Weekly (Monday mornings)
+                      </option>
+                      <option value="monthly">
+                        Monthly (1st of each month)
+                      </option>
+                      <option value="quarterly">Quarterly</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Send Format</label
+                    >
+                    <select class="form-select form-select-sm">
+                      <option value="pdf">PDF Attachment</option>
+                      <option value="link">Secure Web Link Access</option>
+                      <option value="both">Both PDF and secure link</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Recipient Emails</label
+                    >
+                    <textarea
+                      class="form-control form-control-sm"
+                      rows="3"
+                      placeholder="Enter emails separated by commas..."
+                      required
+                    >
+partner@stackly-consulting.com, board-members@stackly.com</textarea
+                    >
+                  </div>
+                  <div class="mb-4">
+                    <div class="form-check form-switch">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="notifySlackCheck"
+                        checked
+                      />
+                      <label
+                        class="form-check-label"
+                        for="notifySlackCheck"
+                        style="font-size: 0.82rem; color: var(--text-muted)"
+                        >Notify on internal Slack Channel
+                        (#board-updates)</label
+                      >
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-accent w-100 py-2"
+                    style="font-size: 0.85rem; font-weight: 600"
+                  >
+                    <i class="fas fa-plus me-2"></i>Create Trigger Schedule
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Active Scheduled Reports List -->
+          <div class="col-12 col-xl-8">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-clock"></i>Configured Delivery Pipelines
+                </h6>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Report & Recipients</th>
+                      <th>Frequency</th>
+                      <th>Next Delivery</th>
+                      <th>Recipients</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          Q3 Corporate Financial Index
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          ><i class="fas fa-paperclip me-1"></i>PDF Format</span
+                        >
+                      </td>
+                      <td>Weekly</td>
+                      <td>Jul 20, 08:00 AM</td>
+                      <td>2 managers, 1 partner</td>
+                      <td>
+                        <div class="form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            checked
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.72rem"
+                        >
+                          <i class="fas fa-pencil"></i>
+                        </button>
+                        <button
+                          class="btn btn-sm btn-light text-danger py-1 px-2"
+                          style="font-size: 0.72rem"
+                        >
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          Client Churn Risk Predictor Logs
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          ><i class="fas fa-link me-1"></i>Secure Link</span
+                        >
+                      </td>
+                      <td>Daily</td>
+                      <td>Tomorrow, 08:00 AM</td>
+                      <td>1 analyst, 2 consultants</td>
+                      <td>
+                        <div class="form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            checked
+                          />
+                        </div>
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.72rem"
+                        >
+                          <i class="fas fa-pencil"></i>
+                        </button>
+                        <button
+                          class="btn btn-sm btn-light text-danger py-1 px-2"
+                          style="font-size: 0.72rem"
+                        >
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          Meridian Allocation Framework Report
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          ><i class="fas fa-paperclip me-1"></i>PDF Format</span
+                        >
+                      </td>
+                      <td>Monthly</td>
+                      <td>Aug 1, 00:00 AM</td>
+                      <td>4 executives, 2 clients</td>
+                      <td>
+                        <div class="form-check form-switch">
+                          <input class="form-check-input" type="checkbox" />
+                        </div>
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.72rem"
+                        >
+                          <i class="fas fa-pencil"></i>
+                        </button>
+                        <button
+                          class="btn btn-sm btn-light text-danger py-1 px-2"
+                          style="font-size: 0.72rem"
+                        >
+                          <i class="fas fa-trash"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

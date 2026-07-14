@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Board | Stackly Corporate Consulting</title>
+    <meta name="description" content="Track project tasks on Kanban board." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Task Board 📋</h1>
+              <p class="db-greeting-sub">
+                Track sprint progress, reassign team tasks, and review pending
+                milestones across active engagements.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <!-- Kanban Columns -->
+        <div class="row g-3 mt-2 flex-nowrap overflow-x-auto pb-3">
+          <!-- Backlog -->
+          <div class="col-12 col-md-4 col-lg-3" style="min-width: 280px">
+            <div class="bg-light p-3 rounded border h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h6
+                  class="fw-bold m-0"
+                  style="font-size: 0.85rem; color: var(--primary-color)"
+                >
+                  <i class="fas fa-list text-muted me-2"></i>Backlog
+                </h6>
+                <span
+                  class="badge bg-secondary p-1 px-2"
+                  style="font-size: 0.7rem"
+                  >2</span
+                >
+              </div>
+              <div class="d-flex flex-column gap-2">
+                <div class="bg-white p-3 rounded border card-shadow">
+                  <span
+                    class="badge bg-secondary bg-opacity-10 text-secondary mb-2"
+                    style="font-size: 0.68rem"
+                    >Operations</span
+                  >
+                  <h6 class="fw-bold mb-2" style="font-size: 0.82rem">
+                    Staff Training Sessions
+                  </h6>
+                  <p class="text-muted mb-3" style="font-size: 0.75rem">
+                    Coordinate calendar dates for client Hand-off training
+                    program.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                    style="font-size: 0.72rem"
+                  >
+                    <span class="text-muted"
+                      ><i class="fas fa-calendar-days me-1"></i>Dec 20</span
+                    >
+                    <span
+                      class="bg-primary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                      style="width: 22px; height: 22px; font-size: 0.65rem"
+                      >JW</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Todo -->
+          <div class="col-12 col-md-4 col-lg-3" style="min-width: 280px">
+            <div class="bg-light p-3 rounded border h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h6
+                  class="fw-bold m-0"
+                  style="font-size: 0.85rem; color: var(--primary-color)"
+                >
+                  <i class="fas fa-circle-play text-muted me-2"></i>To Do
+                </h6>
+                <span
+                  class="badge bg-secondary p-1 px-2"
+                  style="font-size: 0.7rem"
+                  >1</span
+                >
+              </div>
+              <div class="d-flex flex-column gap-2">
+                <div class="bg-white p-3 rounded border card-shadow">
+                  <span
+                    class="badge bg-warning bg-opacity-10 text-warning mb-2"
+                    style="font-size: 0.68rem"
+                    >Compliance</span
+                  >
+                  <h6 class="fw-bold mb-2" style="font-size: 0.82rem">
+                    Apex Compliance Risk Audit
+                  </h6>
+                  <p class="text-muted mb-3" style="font-size: 0.75rem">
+                    Update risk indexing matrices matching standard APAC
+                    benchmarks.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                    style="font-size: 0.72rem"
+                  >
+                    <span class="text-muted"
+                      ><i class="fas fa-calendar-days me-1"></i>Dec 10</span
+                    >
+                    <span
+                      class="bg-primary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                      style="width: 22px; height: 22px; font-size: 0.65rem"
+                      >JW</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- In Progress -->
+          <div class="col-12 col-md-4 col-lg-3" style="min-width: 280px">
+            <div class="bg-light p-3 rounded border h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h6
+                  class="fw-bold m-0"
+                  style="font-size: 0.85rem; color: var(--primary-color)"
+                >
+                  <i class="fas fa-arrows-spin text-muted me-2"></i>In Progress
+                </h6>
+                <span
+                  class="badge bg-secondary p-1 px-2"
+                  style="font-size: 0.7rem"
+                  >1</span
+                >
+              </div>
+              <div class="d-flex flex-column gap-2">
+                <div class="bg-white p-3 rounded border card-shadow">
+                  <span
+                    class="badge bg-primary bg-opacity-10 text-primary mb-2"
+                    style="font-size: 0.68rem"
+                    >Technical</span
+                  >
+                  <h6 class="fw-bold mb-2" style="font-size: 0.82rem">
+                    Deploy Revenue Forecaster v3.1
+                  </h6>
+                  <p class="text-muted mb-3" style="font-size: 0.75rem">
+                    Validate forecasting metrics against historical Q3 tables in
+                    Postgres.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                    style="font-size: 0.72rem"
+                  >
+                    <span class="text-muted"
+                      ><i class="fas fa-calendar-days me-1"></i>Nov 28</span
+                    >
+                    <span
+                      class="bg-primary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                      style="width: 22px; height: 22px; font-size: 0.65rem"
+                      >AC</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- In Review / Completed -->
+          <div class="col-12 col-md-4 col-lg-3" style="min-width: 280px">
+            <div class="bg-light p-3 rounded border h-100">
+              <div
+                class="d-flex justify-content-between align-items-center mb-3"
+              >
+                <h6
+                  class="fw-bold m-0"
+                  style="font-size: 0.85rem; color: var(--primary-color)"
+                >
+                  <i class="fas fa-circle-check text-muted me-2"></i>Completed
+                </h6>
+                <span
+                  class="badge bg-secondary p-1 px-2"
+                  style="font-size: 0.7rem"
+                  >1</span
+                >
+              </div>
+              <div class="d-flex flex-column gap-2">
+                <div class="bg-white p-3 rounded border card-shadow">
+                  <span
+                    class="badge bg-success bg-opacity-10 text-success mb-2"
+                    style="font-size: 0.68rem"
+                    >Strategy</span
+                  >
+                  <h6 class="fw-bold mb-2" style="font-size: 0.82rem">
+                    Competitor Benchmarking Matrix
+                  </h6>
+                  <p class="text-muted mb-3" style="font-size: 0.75rem">
+                    Benchmarking study complete for Vantage retail expansion
+                    SOW.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                    style="font-size: 0.72rem"
+                  >
+                    <span class="text-success"
+                      ><i class="fas fa-circle-check me-1"></i>Done</span
+                    >
+                    <span
+                      class="bg-primary text-white rounded-circle fw-bold d-flex align-items-center justify-content-center"
+                      style="width: 22px; height: 22px; font-size: 0.65rem"
+                      >SK</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

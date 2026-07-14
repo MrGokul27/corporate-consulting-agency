@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deliverables | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View and manage assigned consulting deliverables."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Consulting Deliverables 📝</h1>
+              <p class="db-greeting-sub">
+                Track slide deck edits, financial model validation checklists,
+                audit write-ups, and review comments from clients.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Deliverables Table -->
+          <div class="col-12 col-xl-8">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-list-check"></i>My Assigned Deliverables
+                </h6>
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  style="font-size: 0.75rem"
+                >
+                  <i class="fas fa-circle-plus me-1"></i>Add Deliverable
+                </button>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Deliverable</th>
+                      <th>Client</th>
+                      <th>Due Date</th>
+                      <th>Type</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          Market Analysis Report
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Competitor benchmarking & segmentation study</span
+                        >
+                      </td>
+                      <td>Meridian Capital</td>
+                      <td>Nov 28</td>
+                      <td>Report</td>
+                      <td><span class="db-status review">In Review</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-arrow-up-from-bracket me-1"></i
+                          >Update
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          Competitive Landscape Slide Deck
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Southeast Asian retail growth channels
+                          presentation</span
+                        >
+                      </td>
+                      <td>Vantage Group</td>
+                      <td>Dec 05</td>
+                      <td>Presentation</td>
+                      <td><span class="db-status active">Working</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-arrow-up-from-bracket me-1"></i
+                          >Update
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          Financial Model v2
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Validated revenue forecast projection
+                          calculations</span
+                        >
+                      </td>
+                      <td>Apex Healthcare</td>
+                      <td>Dec 20</td>
+                      <td>Model</td>
+                      <td><span class="db-status pending">Pending</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-arrow-up-from-bracket me-1"></i
+                          >Update
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick statistics / review list -->
+          <div class="col-12 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-clock-rotate-left"></i>Review Feed
+                </h6>
+              </div>
+              <div class="db-section-body d-flex flex-column gap-3">
+                <div
+                  class="p-3 border rounded bg-light bg-opacity-70"
+                  style="font-size: 0.78rem"
+                >
+                  <div class="d-flex justify-content-between mb-1">
+                    <strong style="color: var(--primary-color)"
+                      >Market Analysis Report</strong
+                    >
+                    <span class="text-muted" style="font-size: 0.7rem"
+                      >2h ago</span
+                    >
+                  </div>
+                  <p class="mb-0 text-muted">
+                    Client commented: "Please check the APAC regulatory table
+                    columns on slide 14, are the figures tax adjusted?"
+                  </p>
+                </div>
+                <div
+                  class="p-3 border rounded bg-light bg-opacity-70"
+                  style="font-size: 0.78rem"
+                >
+                  <div class="d-flex justify-content-between mb-1">
+                    <strong style="color: var(--primary-color)"
+                      >Financial Model v2</strong
+                    >
+                    <span class="text-muted" style="font-size: 0.7rem"
+                      >Yesterday</span
+                    >
+                  </div>
+                  <p class="mb-0 text-muted">
+                    Senior Partner approved draft framework. Model is ready for
+                    database schema deployment.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

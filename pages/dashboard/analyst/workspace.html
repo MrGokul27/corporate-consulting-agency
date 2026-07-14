@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workspace Query Console | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="SQL query console and dataset workspace."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Analyst Workspace 💻</h1>
+              <p class="db-greeting-sub">
+                Write SQL queries, inspect table schemas, and visualize raw
+                datasets in real-time.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-3 mt-2">
+          <!-- Schema Explorer Sidebar (Col-3) -->
+          <div class="col-12 col-md-3">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title" style="font-size: 0.8rem">
+                  <i class="fas fa-folder-tree"></i>Schema Browser
+                </h6>
+              </div>
+              <div class="db-section-body p-0">
+                <div class="accordion accordion-flush" id="schemaAccordion">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed py-2 px-3"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#tableRevenue"
+                        style="font-size: 0.8rem; font-weight: 600"
+                      >
+                        <i class="fas fa-table me-2 text-muted"></i
+                        >revenue_ledger
+                      </button>
+                    </h2>
+                    <div
+                      id="tableRevenue"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#schemaAccordion"
+                    >
+                      <div
+                        class="accordion-body py-1 px-3 text-muted"
+                        style="font-size: 0.75rem"
+                      >
+                        <div class="d-flex justify-content-between">
+                          <span>id</span> <span>uuid</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>client_id</span> <span>varchar</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>amount</span> <span>numeric</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>created_at</span> <span>timestamp</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed py-2 px-3"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#tableClients"
+                        style="font-size: 0.8rem; font-weight: 600"
+                      >
+                        <i class="fas fa-table me-2 text-muted"></i
+                        >client_metadata
+                      </button>
+                    </h2>
+                    <div
+                      id="tableClients"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#schemaAccordion"
+                    >
+                      <div
+                        class="accordion-body py-1 px-3 text-muted"
+                        style="font-size: 0.75rem"
+                      >
+                        <div class="d-flex justify-content-between">
+                          <span>client_id</span> <span>varchar</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>company_name</span> <span>varchar</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>sector</span> <span>varchar</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>tier</span> <span>integer</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed py-2 px-3"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#tableChurn"
+                        style="font-size: 0.8rem; font-weight: 600"
+                      >
+                        <i class="fas fa-table me-2 text-muted"></i
+                        >churn_risk_scores
+                      </button>
+                    </h2>
+                    <div
+                      id="tableChurn"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#schemaAccordion"
+                    >
+                      <div
+                        class="accordion-body py-1 px-3 text-muted"
+                        style="font-size: 0.75rem"
+                      >
+                        <div class="d-flex justify-content-between">
+                          <span>risk_id</span> <span>uuid</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>client_id</span> <span>varchar</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>risk_score</span> <span>float8</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <span>flag_status</span> <span>varchar</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Query Terminal (Col-9) -->
+          <div class="col-12 col-md-9">
+            <div class="db-section-card mb-3">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-terminal"></i>SQL Query Editor
+                </h6>
+                <div class="d-flex gap-2">
+                  <button
+                    class="btn btn-sm btn-light py-1 px-2"
+                    style="font-size: 0.75rem"
+                  >
+                    <i class="fas fa-eraser me-1"></i>Clear
+                  </button>
+                  <button
+                    class="btn btn-sm btn-accent py-1 px-3"
+                    style="font-size: 0.75rem; font-weight: 600"
+                  >
+                    <i class="fas fa-play me-1"></i>Execute (F5)
+                  </button>
+                </div>
+              </div>
+              <div class="db-section-body p-0">
+                <textarea
+                  class="form-control font-monospace p-3 text-white bg-dark border-0 rounded-0"
+                  rows="8"
+                  style="
+                    font-size: 0.82rem;
+                    line-height: 1.4;
+                    background-color: #081c19 !important;
+                  "
+                  placeholder="-- Write your SQL query here..."
+                >
+SELECT
+  c.company_name,
+  c.sector,
+  SUM(r.amount) AS total_revenue_q3
+FROM client_metadata c
+JOIN revenue_ledger r ON c.client_id = r.client_id
+WHERE r.created_at >= '2024-07-01'
+GROUP BY c.company_name, c.sector
+ORDER BY total_revenue_q3 DESC;</textarea
+                >
+              </div>
+            </div>
+
+            <!-- Query Output Table -->
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title" style="font-size: 0.8rem">
+                  <i class="fas fa-table-list"></i>Output Results (3 rows
+                  returned)
+                </h6>
+                <span class="text-muted" style="font-size: 0.72rem"
+                  >Execution time: 14ms</span
+                >
+              </div>
+              <div class="table-responsive">
+                <table
+                  class="db-table align-middle m-0"
+                  style="font-size: 0.8rem"
+                >
+                  <thead>
+                    <tr>
+                      <th>company_name</th>
+                      <th>sector</th>
+                      <th>total_revenue_q3</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="fw-bold">Apex Healthcare</td>
+                      <td>Healthcare</td>
+                      <td class="fw-bold text-success">$3,100,000.00</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">Meridian Capital</td>
+                      <td>Finance</td>
+                      <td class="fw-bold text-success">$2,400,000.00</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-bold">Nexus Energy</td>
+                      <td>Energy</td>
+                      <td class="fw-bold text-success">$1,200,000.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

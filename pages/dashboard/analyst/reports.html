@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reports | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Generate and edit analytical consulting reports."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Analytical Reports 📊</h1>
+              <p class="db-greeting-sub">
+                Draft, review, and compile data-driven corporate intelligence
+                reports for stakeholders.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Report Editor Panel -->
+          <div class="col-12 col-xl-7">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-pen-to-square"></i>Report Builder
+                </h6>
+                <div class="d-flex gap-2">
+                  <button
+                    class="btn btn-sm btn-light"
+                    style="font-size: 0.75rem"
+                  >
+                    <i class="fas fa-eye me-1"></i>Preview
+                  </button>
+                  <button
+                    class="btn btn-sm btn-accent"
+                    style="font-size: 0.75rem"
+                  >
+                    <i class="fas fa-paper-plane me-1"></i>Publish
+                  </button>
+                </div>
+              </div>
+              <div class="db-section-body">
+                <form
+                  id="report-builder-form"
+                  class="needs-validation"
+                  novalidate
+                >
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Report Title</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      value="Q3 Corporate Financial Health Index"
+                      required
+                    />
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-6">
+                      <label
+                        class="form-label"
+                        style="
+                          font-size: 0.82rem;
+                          font-weight: 600;
+                          color: var(--primary-color);
+                        "
+                        >Target Audience</label
+                      >
+                      <select class="form-select form-select-sm">
+                        <option value="executive">
+                          Executive & Board Members
+                        </option>
+                        <option value="clients">External Clients</option>
+                        <option value="managers">Operations Managers</option>
+                      </select>
+                    </div>
+                    <div class="col-6">
+                      <label
+                        class="form-label"
+                        style="
+                          font-size: 0.82rem;
+                          font-weight: 600;
+                          color: var(--primary-color);
+                        "
+                        >Insights Template</label
+                      >
+                      <select class="form-select form-select-sm">
+                        <option value="standard">
+                          Standard Analytical Brief
+                        </option>
+                        <option value="financial">
+                          Financial Profitability Study
+                        </option>
+                        <option value="swot">Market SWOT Analysis</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Attached Datasets</label
+                    >
+                    <div
+                      class="p-2 border rounded bg-light d-flex gap-2 flex-wrap"
+                    >
+                      <span
+                        class="badge bg-secondary p-1 px-2 d-flex align-items-center gap-1"
+                        style="font-size: 0.72rem"
+                        >Finance DB Replica
+                        <i class="fas fa-xmark cursor-pointer"></i
+                      ></span>
+                      <span
+                        class="badge bg-secondary p-1 px-2 d-flex align-items-center gap-1"
+                        style="font-size: 0.72rem"
+                        >Vantage Group CRM Logs
+                        <i class="fas fa-xmark cursor-pointer"></i
+                      ></span>
+                      <button
+                        class="btn btn-sm btn-light p-0 px-2"
+                        style="font-size: 0.7rem"
+                      >
+                        <i class="fas fa-plus me-1"></i>Add
+                      </button>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Executive Summary Brief</label
+                    >
+                    <textarea
+                      class="form-control form-control-sm"
+                      rows="6"
+                      placeholder="Write summary of key findings..."
+                      required
+                    >
+This report summarizes corporate revenue trends across Q3 2024. Our Snowflake warehouse and Postgres billing databases show a steady 12.4% increase in financial services. Operating optimization margins remain stable at 84%, while churn predictors highlight potential concerns for technology portfolios.</textarea
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reports List / Drafts -->
+          <div class="col-12 col-xl-5">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-folder-open"></i>Recent Drafts & Published
+                </h6>
+              </div>
+              <div class="db-section-body d-flex flex-column gap-3">
+                <!-- Report Card 1 -->
+                <div class="p-3 border rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div>
+                      <h6
+                        class="mb-1"
+                        style="font-size: 0.88rem; font-weight: 700"
+                      >
+                        Vantage Entry Strategy Draft
+                      </h6>
+                      <span class="text-muted" style="font-size: 0.72rem"
+                        >Updated Today 11:32 by Analyst</span
+                      >
+                    </div>
+                    <span
+                      class="badge bg-warning bg-opacity-10 text-warning"
+                      style="font-size: 0.68rem"
+                      >Draft</span
+                    >
+                  </div>
+                  <p class="text-muted mb-2" style="font-size: 0.75rem">
+                    Analysis of Asian retail expansion hurdles and competitive
+                    metrics.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span
+                      style="
+                        font-size: 0.72rem;
+                        color: var(--accent-color);
+                        font-weight: 600;
+                      "
+                      ><i class="fas fa-paperclip me-1"></i>3 Datasets</span
+                    >
+                    <div>
+                      <button
+                        class="btn btn-sm btn-light py-0 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-light py-0 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-trash text-danger"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Report Card 2 -->
+                <div class="p-3 border rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div>
+                      <h6
+                        class="mb-1"
+                        style="font-size: 0.88rem; font-weight: 700"
+                      >
+                        Apex Healthcare Risk Profile
+                      </h6>
+                      <span class="text-muted" style="font-size: 0.72rem"
+                        >Published Nov 20, 2024</span
+                      >
+                    </div>
+                    <span
+                      class="badge bg-success bg-opacity-10 text-success"
+                      style="font-size: 0.68rem"
+                      >Published</span
+                    >
+                  </div>
+                  <p class="text-muted mb-2" style="font-size: 0.75rem">
+                    Compliance mapping and regulatory exposure assessment index.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span
+                      style="
+                        font-size: 0.72rem;
+                        color: var(--accent-color);
+                        font-weight: 600;
+                      "
+                      ><i class="fas fa-paperclip me-1"></i>1 Dataset</span
+                    >
+                    <div>
+                      <button
+                        class="btn btn-sm btn-light py-0 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-file-pdf"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-light py-0 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-share-nodes"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Report Card 3 -->
+                <div class="p-3 border rounded">
+                  <div
+                    class="d-flex justify-content-between align-items-start mb-2"
+                  >
+                    <div>
+                      <h6
+                        class="mb-1"
+                        style="font-size: 0.88rem; font-weight: 700"
+                      >
+                        Meridian Capital Capital Allocation Study
+                      </h6>
+                      <span class="text-muted" style="font-size: 0.72rem"
+                        >Published Nov 14, 2024</span
+                      >
+                    </div>
+                    <span
+                      class="badge bg-success bg-opacity-10 text-success"
+                      style="font-size: 0.68rem"
+                      >Published</span
+                    >
+                  </div>
+                  <p class="text-muted mb-2" style="font-size: 0.75rem">
+                    Asset allocation framework optimization and historical
+                    revenue correlations.
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <span
+                      style="
+                        font-size: 0.72rem;
+                        color: var(--accent-color);
+                        font-weight: 600;
+                      "
+                      ><i class="fas fa-paperclip me-1"></i>5 Datasets</span
+                    >
+                    <div>
+                      <button
+                        class="btn btn-sm btn-light py-0 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-file-pdf"></i>
+                      </button>
+                      <button
+                        class="btn btn-sm btn-light py-0 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-share-nodes"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

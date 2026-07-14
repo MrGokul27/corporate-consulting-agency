@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Accounts | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Manage and view client accounts details."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Client Accounts 🏢</h1>
+              <p class="db-greeting-sub">
+                Access key stakeholder contacts, corporate sectors, contract
+                histories, and priority tiers for all active accounts.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Accounts Table -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-address-book"></i>Account Directory
+                </h6>
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  style="font-size: 0.75rem"
+                >
+                  <i class="fas fa-user-plus me-1"></i>Add Account
+                </button>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Company</th>
+                      <th>Sector</th>
+                      <th>Account Tier</th>
+                      <th>Primary Lead</th>
+                      <th>Open Tickets</th>
+                      <th>Health Index</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Meridian Capital
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >meridian@finance-group.com</span
+                        >
+                      </td>
+                      <td>Finance</td>
+                      <td>
+                        <span
+                          class="badge bg-primary bg-opacity-10 text-primary"
+                          style="font-size: 0.7rem"
+                          >Tier 1 (High Priority)</span
+                        >
+                      </td>
+                      <td>Alex Chen</td>
+                      <td class="fw-bold text-center">0</td>
+                      <td><span class="db-status completed">Healthy</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-eye me-1"></i>View Profile
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Vantage Group
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >vantage@retail-corp.com</span
+                        >
+                      </td>
+                      <td>Technology</td>
+                      <td>
+                        <span
+                          class="badge bg-secondary bg-opacity-10 text-secondary"
+                          style="font-size: 0.7rem"
+                          >Tier 2</span
+                        >
+                      </td>
+                      <td>Sarah Patel</td>
+                      <td class="fw-bold text-center">3</td>
+                      <td><span class="db-status review">At Risk</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-eye me-1"></i>View Profile
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Apex Healthcare
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >apex@health-advisory.com</span
+                        >
+                      </td>
+                      <td>Healthcare</td>
+                      <td>
+                        <span
+                          class="badge bg-primary bg-opacity-10 text-primary"
+                          style="font-size: 0.7rem"
+                          >Tier 1 (High Priority)</span
+                        >
+                      </td>
+                      <td>John Williams</td>
+                      <td class="fw-bold text-center">1</td>
+                      <td><span class="db-status completed">Healthy</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-eye me-1"></i>View Profile
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View and manage active consulting projects."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Manage Projects 📁</h1>
+              <p class="db-greeting-sub">
+                Oversee client engagements, milestone roadmaps, deadlines, and
+                project health indicators.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Projects Table -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-cubes"></i>Active Projects Portfolio
+                </h6>
+                <button
+                  class="btn btn-sm btn-accent"
+                  style="font-size: 0.75rem"
+                >
+                  <i class="fas fa-plus me-1"></i>New Project
+                </button>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Project Name</th>
+                      <th>Client</th>
+                      <th>End Date</th>
+                      <th>Progress</th>
+                      <th>Lead Consultant</th>
+                      <th>Project Health</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <span class="fw-bold" style="font-size: 0.88rem"
+                          >Digital Transformation</span
+                        >
+                      </td>
+                      <td>Meridian Capital</td>
+                      <td>Dec 15, 2024</td>
+                      <td>
+                        <div
+                          class="d-flex align-items-center gap-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <div
+                            class="db-progress-track"
+                            style="width: 60px; height: 5px"
+                          >
+                            <div
+                              class="db-progress-fill"
+                              style="width: 72%"
+                            ></div>
+                          </div>
+                          <span>72%</span>
+                        </div>
+                      </td>
+                      <td>Alex Chen</td>
+                      <td><span class="db-status completed">Healthy</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-pencil me-1"></i>Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold" style="font-size: 0.88rem"
+                          >Market Entry Strategy</span
+                        >
+                      </td>
+                      <td>Vantage Group</td>
+                      <td>Jan 08, 2025</td>
+                      <td>
+                        <div
+                          class="d-flex align-items-center gap-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <div
+                            class="db-progress-track"
+                            style="width: 60px; height: 5px"
+                          >
+                            <div
+                              class="db-progress-fill"
+                              style="width: 45%"
+                            ></div>
+                          </div>
+                          <span>45%</span>
+                        </div>
+                      </td>
+                      <td>Sarah Kim</td>
+                      <td><span class="db-status review">At Risk</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-pencil me-1"></i>Edit
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="fw-bold" style="font-size: 0.88rem"
+                          >Ops Optimization SOW</span
+                        >
+                      </td>
+                      <td>Orion Logistics</td>
+                      <td>Nov 30, 2024</td>
+                      <td>
+                        <div
+                          class="d-flex align-items-center gap-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <div
+                            class="db-progress-track"
+                            style="width: 60px; height: 5px"
+                          >
+                            <div
+                              class="db-progress-fill"
+                              style="width: 91%"
+                            ></div>
+                          </div>
+                          <span>91%</span>
+                        </div>
+                      </td>
+                      <td>Marcus Torres</td>
+                      <td><span class="db-status completed">Healthy</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-pencil me-1"></i>Edit
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Team | Stackly Corporate Consulting</title>
+    <meta name="description" content="View and manage assigned consultants." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">My Consulting Team 👥</h1>
+              <p class="db-greeting-sub">
+                Track active consultant utilizations, assign project scopes,
+                review billing timesheets, and manage capabilities.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Team Table -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-users-rectangle"></i>Consultant Staffing
+                </h6>
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  style="font-size: 0.75rem"
+                >
+                  <i class="fas fa-user-plus me-1"></i>Request Capacity
+                </button>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Consultant</th>
+                      <th>Primary Skillset</th>
+                      <th>Allocated Project</th>
+                      <th>Weekly Billable Hours</th>
+                      <th>Utilization</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Alex Chen
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >alex.chen@company.com</span
+                        >
+                      </td>
+                      <td>Snowflake, ETL, SQL</td>
+                      <td>Digital Transformation</td>
+                      <td>38 hours</td>
+                      <td class="fw-bold">84%</td>
+                      <td><span class="db-status completed">Online</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-envelope"></i> Message
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          Sarah Kim
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >sarah.kim@company.com</span
+                        >
+                      </td>
+                      <td>Business Scoping, ESG</td>
+                      <td>Market Entry Strategy</td>
+                      <td>32 hours</td>
+                      <td class="fw-bold">68%</td>
+                      <td><span class="db-status completed">Online</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-envelope"></i> Message
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.88rem">
+                          John Williams
+                        </div>
+                        <span class="text-muted" style="font-size: 0.75rem"
+                          >john.williams@company.com</span
+                        >
+                      </td>
+                      <td>Risk Indexes, Compliance</td>
+                      <td>Apex Compliance SOW</td>
+                      <td>40 hours</td>
+                      <td class="fw-bold">95%</td>
+                      <td><span class="db-status review">Away</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-envelope"></i> Message
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

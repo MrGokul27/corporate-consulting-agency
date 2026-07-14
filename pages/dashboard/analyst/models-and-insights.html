@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Models & Insights | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View and configure analytical model predictions and insights."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Models & Insights 🧠</h1>
+              <p class="db-greeting-sub">
+                Manage machine learning models, adjust training settings, and
+                extract automated consulting insights.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Active Models Grid -->
+          <div class="col-12 col-xl-8">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-microchip"></i>Active Statistical Models
+                </h6>
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  style="font-size: 0.75rem"
+                >
+                  <i class="fas fa-plus me-1"></i>New Model
+                </button>
+              </div>
+              <div class="row g-3 p-2">
+                <!-- Model 1 -->
+                <div class="col-12 col-md-6">
+                  <div class="border rounded p-3 bg-light bg-opacity-50">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2"
+                    >
+                      <span
+                        class="badge bg-success bg-opacity-10 text-success fw-bold"
+                        style="font-size: 0.7rem"
+                        >Supervised Learning</span
+                      >
+                      <small class="text-muted" style="font-size: 0.75rem"
+                        ><i class="fas fa-circle-check me-1 text-success"></i
+                        >Active</small
+                      >
+                    </div>
+                    <h6
+                      class="mb-1"
+                      style="font-size: 0.92rem; font-weight: 700"
+                    >
+                      Revenue Forecaster v3.1
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size: 0.78rem">
+                      Predicts contract billing fluctuations based on client
+                      sector macro trends and pipeline velocity.
+                    </p>
+
+                    <div style="font-size: 0.78rem">
+                      <div class="d-flex justify-content-between mb-1">
+                        <span>Accuracy Score:</span>
+                        <strong class="text-success">91%</strong>
+                      </div>
+                      <div class="db-progress-track mb-3" style="height: 6px">
+                        <div
+                          class="db-progress-fill bg-success"
+                          style="width: 91%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between text-muted"
+                        style="font-size: 0.72rem"
+                      >
+                        <span>Last Trained: 3d ago</span>
+                        <span>Interval: Daily</span>
+                      </div>
+                    </div>
+                    <hr class="my-2" style="opacity: 0.08" />
+                    <div class="d-flex justify-content-end gap-2">
+                      <button
+                        class="btn btn-sm btn-light py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-sliders me-1"></i>Params
+                      </button>
+                      <button
+                        class="btn btn-sm btn-accent py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-play me-1"></i>Run
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Model 2 -->
+                <div class="col-12 col-md-6">
+                  <div class="border rounded p-3 bg-light bg-opacity-50">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2"
+                    >
+                      <span
+                        class="badge bg-purple bg-opacity-10 text-purple fw-bold"
+                        style="font-size: 0.7rem"
+                        >Classification</span
+                      >
+                      <small class="text-muted" style="font-size: 0.75rem"
+                        ><i class="fas fa-circle-check me-1 text-success"></i
+                        >Active</small
+                      >
+                    </div>
+                    <h6
+                      class="mb-1"
+                      style="font-size: 0.92rem; font-weight: 700"
+                    >
+                      Client Churn Predictor
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size: 0.78rem">
+                      Identifies customer retention risks using ticket latency,
+                      meeting frequency, and feedback signals.
+                    </p>
+
+                    <div style="font-size: 0.78rem">
+                      <div class="d-flex justify-content-between mb-1">
+                        <span>Accuracy Score:</span>
+                        <strong class="text-success">87%</strong>
+                      </div>
+                      <div class="db-progress-track mb-3" style="height: 6px">
+                        <div
+                          class="db-progress-fill bg-success"
+                          style="width: 87%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between text-muted"
+                        style="font-size: 0.72rem"
+                      >
+                        <span>Last Trained: Today</span>
+                        <span>Interval: Weekly</span>
+                      </div>
+                    </div>
+                    <hr class="my-2" style="opacity: 0.08" />
+                    <div class="d-flex justify-content-end gap-2">
+                      <button
+                        class="btn btn-sm btn-light py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-sliders me-1"></i>Params
+                      </button>
+                      <button
+                        class="btn btn-sm btn-accent py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-play me-1"></i>Run
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Model 3 -->
+                <div class="col-12 col-md-6">
+                  <div class="border rounded p-3 bg-light bg-opacity-50">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2"
+                    >
+                      <span
+                        class="badge bg-warning bg-opacity-10 text-warning fw-bold"
+                        style="font-size: 0.7rem"
+                        >Optimization</span
+                      >
+                      <small class="text-muted" style="font-size: 0.75rem"
+                        ><i class="fas fa-circle-check me-1 text-success"></i
+                        >Active</small
+                      >
+                    </div>
+                    <h6
+                      class="mb-1"
+                      style="font-size: 0.92rem; font-weight: 700"
+                    >
+                      Risk Indexing Engine
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size: 0.78rem">
+                      Scores portfolio companies against global compliance
+                      matrices and macroeconomic indexes.
+                    </p>
+
+                    <div style="font-size: 0.78rem">
+                      <div class="d-flex justify-content-between mb-1">
+                        <span>Accuracy Score:</span>
+                        <strong class="text-success">93%</strong>
+                      </div>
+                      <div class="db-progress-track mb-3" style="height: 6px">
+                        <div
+                          class="db-progress-fill bg-success"
+                          style="width: 93%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between text-muted"
+                        style="font-size: 0.72rem"
+                      >
+                        <span>Last Trained: 1w ago</span>
+                        <span>Interval: Monthly</span>
+                      </div>
+                    </div>
+                    <hr class="my-2" style="opacity: 0.08" />
+                    <div class="d-flex justify-content-end gap-2">
+                      <button
+                        class="btn btn-sm btn-light py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-sliders me-1"></i>Params
+                      </button>
+                      <button
+                        class="btn btn-sm btn-accent py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-play me-1"></i>Run
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Model 4 -->
+                <div class="col-12 col-md-6">
+                  <div class="border rounded p-3 bg-light bg-opacity-50">
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-2"
+                    >
+                      <span
+                        class="badge bg-secondary bg-opacity-10 text-secondary fw-bold"
+                        style="font-size: 0.7rem"
+                        >Deep Learning</span
+                      >
+                      <small class="text-muted" style="font-size: 0.75rem"
+                        ><i class="fas fa-clock me-1 text-secondary"></i
+                        >Draft</small
+                      >
+                    </div>
+                    <h6
+                      class="mb-1"
+                      style="font-size: 0.92rem; font-weight: 700"
+                    >
+                      Capacity Allocator NLP
+                    </h6>
+                    <p class="text-muted mb-3" style="font-size: 0.78rem">
+                      Analyzes team resumes and project charters to recommend
+                      consultant matchings.
+                    </p>
+
+                    <div style="font-size: 0.78rem">
+                      <div class="d-flex justify-content-between mb-1">
+                        <span>Testing Accuracy:</span>
+                        <strong class="text-muted">74%</strong>
+                      </div>
+                      <div class="db-progress-track mb-3" style="height: 6px">
+                        <div
+                          class="db-progress-fill bg-secondary"
+                          style="width: 74%"
+                        ></div>
+                      </div>
+                      <div
+                        class="d-flex justify-content-between text-muted"
+                        style="font-size: 0.72rem"
+                      >
+                        <span>Last Trained: Never</span>
+                        <span>Interval: Ad-hoc</span>
+                      </div>
+                    </div>
+                    <hr class="my-2" style="opacity: 0.08" />
+                    <div class="d-flex justify-content-end gap-2">
+                      <button
+                        class="btn btn-sm btn-light py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-sliders me-1"></i>Params
+                      </button>
+                      <button
+                        class="btn btn-sm btn-accent py-1 px-2"
+                        style="font-size: 0.72rem"
+                      >
+                        <i class="fas fa-rocket me-1"></i>Deploy
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Automated Insights Panel -->
+          <div class="col-12 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-wand-magic-sparkles"></i>Consulting Insights
+                </h6>
+              </div>
+              <div class="db-section-body d-flex flex-column gap-3">
+                <div
+                  class="p-3 rounded border-start border-3 border-warning bg-light bg-opacity-70"
+                >
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i
+                      class="fas fa-triangle-exclamation text-warning"
+                      style="font-size: 0.9rem"
+                    ></i>
+                    <strong
+                      style="font-size: 0.85rem; color: var(--primary-color)"
+                      >Vantage Group Retention Alert</strong
+                    >
+                  </div>
+                  <p
+                    class="mb-0 text-muted"
+                    style="font-size: 0.78rem; line-height: 1.5"
+                  >
+                    The Churn model flagged **Vantage Group** as high risk.
+                    Meeting frequency decreased by **40%** in the past 14 days
+                    and outstanding tasks remain unassigned. Recommend immediate
+                    stakeholder check-in.
+                  </p>
+                </div>
+
+                <div
+                  class="p-3 rounded border-start border-3 border-success bg-light bg-opacity-70"
+                >
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i
+                      class="fas fa-circle-check text-success"
+                      style="font-size: 0.9rem"
+                    ></i>
+                    <strong
+                      style="font-size: 0.85rem; color: var(--primary-color)"
+                      >Finance Sector Growth predicted</strong
+                    >
+                  </div>
+                  <p
+                    class="mb-0 text-muted"
+                    style="font-size: 0.78rem; line-height: 1.5"
+                  >
+                    Revenue Forecaster predicts a **14% increase** in financial
+                    services advisory pipelines starting in Q4, spurred by
+                    regulatory revisions. Recommend shifting available analyst
+                    capacity to Finance leads.
+                  </p>
+                </div>
+
+                <div
+                  class="p-3 rounded border-start border-3 border-info bg-light bg-opacity-70"
+                >
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <i
+                      class="fas fa-circle-info text-info"
+                      style="font-size: 0.9rem"
+                    ></i>
+                    <strong
+                      style="font-size: 0.85rem; color: var(--primary-color)"
+                      >Model Accuracy optimization</strong
+                    >
+                  </div>
+                  <p
+                    class="mb-0 text-muted"
+                    style="font-size: 0.78rem; line-height: 1.5"
+                  >
+                    Re-training of Revenue Forecaster v3.1 with additional
+                    external macro indexes has increased prediction accuracy
+                    score from **88% to 91%**.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

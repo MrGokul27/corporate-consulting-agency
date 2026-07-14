@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resource Library | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View frameworks, research papers, and advisory databases."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Knowledge Library 📚</h1>
+              <p class="db-greeting-sub">
+                Access business strategy frameworks, industry benchmarks, market
+                reports, and global case studies.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Search and Filters -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-body py-3">
+                <form class="row g-2 align-items-center">
+                  <div class="col-12 col-md-6 col-lg-8">
+                    <div class="input-group">
+                      <span
+                        class="input-group-text bg-white border-end-0 text-muted"
+                        ><i class="fas fa-magnifying-glass"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control border-start-0"
+                        placeholder="Search strategy frameworks, McKinsey docs, ESG guides..."
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-2">
+                    <select class="form-select">
+                      <option selected>All Frameworks</option>
+                      <option>Strategy</option>
+                      <option>Finance</option>
+                      <option>Market Sizing</option>
+                    </select>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-2">
+                    <button
+                      type="submit"
+                      class="btn btn-accent w-100 py-2"
+                      style="font-weight: 600"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-1">
+          <!-- Framework Cards -->
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-chess"></i>BCG Matrix Guide
+                </h6>
+                <span
+                  class="badge bg-primary bg-opacity-10 text-primary"
+                  style="font-size: 0.7rem"
+                  >Strategy</span
+                >
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted mb-4"
+                  style="font-size: 0.82rem; line-height: 1.5"
+                >
+                  Detailed slide deck compiling BCG classification frameworks
+                  (Cash Cows, Stars, Question Marks, Dogs) for client product
+                  portfolios.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span style="font-size: 0.72rem; color: var(--text-muted)"
+                    ><i class="fas fa-file-pdf text-danger me-1"></i>3.1 MB
+                    PDF</span
+                  >
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-light py-1 px-2"
+                    style="font-size: 0.75rem"
+                    ><i class="fas fa-download"></i> Download</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-diagram-project"></i>McKinsey 7S Framework
+                </h6>
+                <span
+                  class="badge bg-primary bg-opacity-10 text-primary"
+                  style="font-size: 0.7rem"
+                  >Organizational</span
+                >
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted mb-4"
+                  style="font-size: 0.82rem; line-height: 1.5"
+                >
+                  Operational alignment model document covering Structure,
+                  Strategy, Systems, Skills, Staff, Style, and Shared Values.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span style="font-size: 0.72rem; color: var(--text-muted)"
+                    ><i class="fas fa-file-word text-primary me-1"></i>1.2 MB
+                    DOCX</span
+                  >
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-light py-1 px-2"
+                    style="font-size: 0.75rem"
+                    ><i class="fas fa-download"></i> Download</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-chart-line"></i>APAC ESG Compliance Index
+                </h6>
+                <span
+                  class="badge bg-success bg-opacity-10 text-success"
+                  style="font-size: 0.7rem"
+                  >ESG</span
+                >
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted mb-4"
+                  style="font-size: 0.82rem; line-height: 1.5"
+                >
+                  2024 compliance indices and environmental rating metrics for
+                  companies operating in Southeast Asian retail markets.
+                </p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-auto"
+                >
+                  <span style="font-size: 0.72rem; color: var(--text-muted)"
+                    ><i class="fas fa-file-excel text-success me-1"></i>4.5 MB
+                    XLSX</span
+                  >
+                  <a
+                    href="#"
+                    class="btn btn-sm btn-light py-1 px-2"
+                    style="font-size: 0.75rem"
+                    ><i class="fas fa-download"></i> Download</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

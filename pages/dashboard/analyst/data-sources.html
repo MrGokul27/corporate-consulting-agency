@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Sources | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Connect and manage enterprise data integration pipelines."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Data Sources 📡</h1>
+              <p class="db-greeting-sub">
+                Connect and manage enterprise database warehouses, API
+                endpoints, and cloud data integration pipelines.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Connect New Data Source -->
+          <div class="col-12 col-xl-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-plug-circle-plus"></i>Connect Pipeline
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <form
+                  id="connect-source-form"
+                  class="needs-validation"
+                  novalidate
+                >
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Source Type</label
+                    >
+                    <select class="form-select form-select-sm" required>
+                      <option value="" disabled selected>
+                        Select database/API type
+                      </option>
+                      <option value="postgres">PostgreSQL Database</option>
+                      <option value="snowflake">
+                        Snowflake Data Warehouse
+                      </option>
+                      <option value="salesforce">Salesforce API</option>
+                      <option value="rest">REST API Integration</option>
+                      <option value="s3">AWS S3 Bucket</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Connection Name</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="e.g. Q3 Sales Data Pipeline"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Host / Endpoint URL</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control form-control-sm"
+                      placeholder="e.g. db.stackly-consulting.internal"
+                      required
+                    />
+                  </div>
+                  <div class="row mb-3">
+                    <div class="col-8">
+                      <label
+                        class="form-label"
+                        style="
+                          font-size: 0.82rem;
+                          font-weight: 600;
+                          color: var(--primary-color);
+                        "
+                        >Username</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control form-control-sm"
+                        required
+                      />
+                    </div>
+                    <div class="col-4">
+                      <label
+                        class="form-label"
+                        style="
+                          font-size: 0.82rem;
+                          font-weight: 600;
+                          color: var(--primary-color);
+                        "
+                        >Port</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control form-control-sm"
+                        placeholder="5432"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Access Token / Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control form-control-sm"
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-accent w-100 py-2"
+                    style="font-size: 0.85rem; font-weight: 600"
+                  >
+                    <i class="fas fa-link me-2"></i>Test & Authorize
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Connected Sources Table -->
+          <div class="col-12 col-xl-8">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-network-wired"></i>Active Integrations
+                </h6>
+                <button
+                  class="btn btn-sm btn-outline-secondary"
+                  style="font-size: 0.75rem"
+                >
+                  <i class="fas fa-rotate me-1"></i>Sync All
+                </button>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Connection</th>
+                      <th>Type</th>
+                      <th>Records</th>
+                      <th>Last Synced</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <div
+                            class="db-stat-icon emerald text-center p-2 rounded-circle"
+                            style="
+                              width: 32px;
+                              height: 32px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          >
+                            <i
+                              class="fas fa-database text-white"
+                              style="font-size: 0.75rem"
+                            ></i>
+                          </div>
+                          <div>
+                            <div class="fw-bold" style="font-size: 0.85rem">
+                              PostgreSQL Revenue
+                            </div>
+                            <span class="text-muted" style="font-size: 0.7rem"
+                              >rev-db-replica.internal</span
+                            >
+                          </div>
+                        </div>
+                      </td>
+                      <td>Database</td>
+                      <td class="fw-bold">48,200</td>
+                      <td>Today 09:14</td>
+                      <td><span class="db-status completed">Online</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light p-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-sync"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <div
+                            class="db-stat-icon gold text-center p-2 rounded-circle"
+                            style="
+                              width: 32px;
+                              height: 32px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          >
+                            <i
+                              class="fas fa-cloud text-white"
+                              style="font-size: 0.75rem"
+                            ></i>
+                          </div>
+                          <div>
+                            <div class="fw-bold" style="font-size: 0.85rem">
+                              Snowflake Warehouse
+                            </div>
+                            <span class="text-muted" style="font-size: 0.7rem"
+                              >stackly.snowflakecomputing.com</span
+                            >
+                          </div>
+                        </div>
+                      </td>
+                      <td>Warehouse</td>
+                      <td class="fw-bold">3,892,102</td>
+                      <td>Yesterday 23:00</td>
+                      <td><span class="db-status completed">Online</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light p-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-sync"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <div
+                            class="db-stat-icon teal text-center p-2 rounded-circle"
+                            style="
+                              width: 32px;
+                              height: 32px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          >
+                            <i
+                              class="fas fa-chart-simple text-white"
+                              style="font-size: 0.75rem"
+                            ></i>
+                          </div>
+                          <div>
+                            <div class="fw-bold" style="font-size: 0.85rem">
+                              Salesforce CRM API
+                            </div>
+                            <span class="text-muted" style="font-size: 0.7rem"
+                              >api.salesforce.v54.stackly</span
+                            >
+                          </div>
+                        </div>
+                      </td>
+                      <td>REST API</td>
+                      <td class="fw-bold">12,500</td>
+                      <td>Today 11:00</td>
+                      <td><span class="db-status active">Syncing</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light p-1 px-2"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-spinner fa-spin"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-2">
+                          <div
+                            class="db-stat-icon red text-center p-2 rounded-circle"
+                            style="
+                              width: 32px;
+                              height: 32px;
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+                            "
+                          >
+                            <i
+                              class="fas fa-plug text-white"
+                              style="font-size: 0.75rem"
+                            ></i>
+                          </div>
+                          <div>
+                            <div class="fw-bold" style="font-size: 0.85rem">
+                              Legacy Billing System
+                            </div>
+                            <span class="text-muted" style="font-size: 0.7rem"
+                              >billing-soap.stackly-server</span
+                            >
+                          </div>
+                        </div>
+                      </td>
+                      <td>SOAP API</td>
+                      <td class="fw-bold">--</td>
+                      <td>July 10 14:12</td>
+                      <td>
+                        <span class="db-status critical">Auth Error</span>
+                      </td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light p-1 px-2 text-danger"
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-wrench"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <!-- Security Specs -->
+          <div class="col-12">
+            <div class="db-section-card">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-shield-halved"></i>Enterprise Pipeline
+                  Security Protocols
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <p
+                  class="text-muted mb-0"
+                  style="font-size: 0.82rem; line-height: 1.6"
+                >
+                  All connections are encrypted end-to-end using TLS 1.3 with
+                  AES-256 cipher tunnels. IP whitelisting is required for
+                  internal databases. Direct SQL client queries are rate-limited
+                  to 500 actions/min to guarantee stability. Anonymization
+                  filters are automatically applied to sensitive columns
+                  containing client PII (Personally Identifiable Information)
+                  before indexing to compliance warehouses.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

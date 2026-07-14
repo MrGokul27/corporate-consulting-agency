@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exports | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="Download and manage data export archives."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Data Exports 📤</h1>
+              <p class="db-greeting-sub">
+                Request, monitor, and download analytical exports in CSV, PDF,
+                and JSON formats.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Request Export -->
+          <div class="col-12 col-lg-4">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-file-export"></i>New Export Task
+                </h6>
+              </div>
+              <div class="db-section-body">
+                <form
+                  id="export-request-form"
+                  class="needs-validation"
+                  novalidate
+                >
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Data Context</label
+                    >
+                    <select class="form-select form-select-sm" required>
+                      <option value="" disabled selected>
+                        Select dataset context
+                      </option>
+                      <option value="billing">Billing & Invoices Audit</option>
+                      <option value="client-engagements">
+                        Client Engagements Portfolio
+                      </option>
+                      <option value="models">
+                        Predictive Model Run Results
+                      </option>
+                      <option value="activity">Raw Operations Log</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >File Format</label
+                    >
+                    <div class="d-flex gap-3">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="formatRadio"
+                          id="radioCSV"
+                          checked
+                          required
+                        />
+                        <label
+                          class="form-check-label"
+                          for="radioCSV"
+                          style="font-size: 0.85rem"
+                          >CSV</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="formatRadio"
+                          id="radioPDF"
+                          required
+                        />
+                        <label
+                          class="form-check-label"
+                          for="radioPDF"
+                          style="font-size: 0.85rem"
+                          >PDF Report</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="formatRadio"
+                          id="radioJSON"
+                          required
+                        />
+                        <label
+                          class="form-check-label"
+                          for="radioJSON"
+                          style="font-size: 0.85rem"
+                          >JSON</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label
+                      class="form-label"
+                      style="
+                        font-size: 0.82rem;
+                        font-weight: 600;
+                        color: var(--primary-color);
+                      "
+                      >Date Filter Range</label
+                    >
+                    <select class="form-select form-select-sm">
+                      <option value="all">Entire History</option>
+                      <option value="q3" selected>Current Quarter (Q3)</option>
+                      <option value="month">Last 30 Days</option>
+                      <option value="custom">Custom Date Range...</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="compressCheck"
+                      />
+                      <label
+                        class="form-check-label"
+                        for="compressCheck"
+                        style="font-size: 0.82rem; color: var(--text-muted)"
+                        >Compress output file (.zip)</label
+                      >
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-accent w-100 py-2"
+                    style="font-size: 0.85rem; font-weight: 600"
+                  >
+                    <i class="fas fa-arrows-spin me-2"></i>Generate Export
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Export History List -->
+          <div class="col-12 col-lg-8">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-clock-rotate-left"></i>Recent Generations
+                </h6>
+              </div>
+              <div class="table-responsive">
+                <table class="db-table align-middle">
+                  <thead>
+                    <tr>
+                      <th>Filename</th>
+                      <th>Format</th>
+                      <th>Size</th>
+                      <th>Generated</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          q3_revenue_breakdown.pdf
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Query ID: #EXP-88912</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          class="badge bg-danger bg-opacity-10 text-danger p-1 px-2"
+                          style="font-size: 0.7rem"
+                          >PDF</span
+                        >
+                      </td>
+                      <td>12.4 MB</td>
+                      <td>Today 09:15</td>
+                      <td><span class="db-status completed">Ready</span></td>
+                      <td>
+                        <a
+                          href="#"
+                          class="btn btn-sm btn-outline-primary py-1 px-2"
+                          style="font-size: 0.75rem"
+                          ><i class="fas fa-download me-1"></i>Download</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          client_churn_metrics_raw.csv
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Query ID: #EXP-88904</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          class="badge bg-success bg-opacity-10 text-success p-1 px-2"
+                          style="font-size: 0.7rem"
+                          >CSV</span
+                        >
+                      </td>
+                      <td>2.1 MB</td>
+                      <td>Yesterday</td>
+                      <td><span class="db-status completed">Ready</span></td>
+                      <td>
+                        <a
+                          href="#"
+                          class="btn btn-sm btn-outline-primary py-1 px-2"
+                          style="font-size: 0.75rem"
+                          ><i class="fas fa-download me-1"></i>Download</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          ops_efficiency_scores_2024.json
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Query ID: #EXP-88891</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          class="badge bg-warning bg-opacity-10 text-warning p-1 px-2"
+                          style="font-size: 0.7rem"
+                          >JSON</span
+                        >
+                      </td>
+                      <td>185 KB</td>
+                      <td>Nov 18, 2024</td>
+                      <td><span class="db-status completed">Ready</span></td>
+                      <td>
+                        <a
+                          href="#"
+                          class="btn btn-sm btn-outline-primary py-1 px-2"
+                          style="font-size: 0.75rem"
+                          ><i class="fas fa-download me-1"></i>Download</a
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="fw-bold" style="font-size: 0.85rem">
+                          partner_allocations_historical.zip
+                        </div>
+                        <span class="text-muted" style="font-size: 0.7rem"
+                          >Query ID: #EXP-88941</span
+                        >
+                      </td>
+                      <td>
+                        <span
+                          class="badge bg-secondary bg-opacity-10 text-secondary p-1 px-2"
+                          style="font-size: 0.7rem"
+                          >ZIP</span
+                        >
+                      </td>
+                      <td>142.0 MB</td>
+                      <td>Just now</td>
+                      <td><span class="db-status active">Compiling</span></td>
+                      <td>
+                        <button
+                          class="btn btn-sm btn-light py-1 px-2"
+                          disabled
+                          style="font-size: 0.75rem"
+                        >
+                          <i class="fas fa-spinner fa-spin me-1"></i>Processing
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>

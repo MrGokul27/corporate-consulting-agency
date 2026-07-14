@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Engagements | Stackly Corporate Consulting</title>
+    <meta
+      name="description"
+      content="View and manage active consulting engagements."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../../assets/images/logoStackly.webp"
+    />
+    <link href="../../../assets/css/styles.css" rel="stylesheet" />
+    <link href="../../../assets/css/dashboard.css" rel="stylesheet" />
+  </head>
+  <body class="dashboard-body">
+    <div class="db-layout">
+      <main class="db-main">
+        <!-- Page Header -->
+        <div class="db-page-header">
+          <div class="db-page-header-top">
+            <div>
+              <h1 class="db-greeting">Active Engagements 🤝</h1>
+              <p class="db-greeting-sub">
+                Monitor contract values, scoping dates, program health metrics,
+                and client satisfaction scores.
+              </p>
+            </div>
+            <div class="db-date-badge">
+              <i class="fas fa-calendar-days"></i>
+              <span id="current-date">Loading...</span>
+            </div>
+          </div>
+          <div class="db-gold-rule mt-3">
+            <div class="db-gold-rule-line"></div>
+            <div class="db-gold-rule-diamond"></div>
+            <div
+              class="db-gold-rule-line"
+              style="
+                background: linear-gradient(
+                  90deg,
+                  transparent,
+                  var(--accent-color)
+                );
+              "
+            ></div>
+          </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="row g-4 mt-2">
+          <!-- Active Engagements Grid -->
+          <div class="col-12 col-xl-6">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-handshake"></i>Digital Transformation
+                  Advisory
+                </h6>
+                <span class="db-status completed">On Track</span>
+              </div>
+              <div class="db-section-body">
+                <div class="row g-3 mb-4" style="font-size: 0.82rem">
+                  <div class="col-6">
+                    <span class="text-muted d-block">Client Company</span>
+                    <strong style="color: var(--primary-color)"
+                      >Meridian Capital</strong
+                    >
+                  </div>
+                  <div class="col-6">
+                    <span class="text-muted d-block">Contract Value</span>
+                    <strong style="color: var(--accent-color)"
+                      >$2,400,000.00</strong
+                    >
+                  </div>
+                  <div class="col-6 mt-3">
+                    <span class="text-muted d-block">Start Date</span>
+                    <strong>Jan 01, 2024</strong>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <span class="text-muted d-block">End Date</span>
+                    <strong>Dec 31, 2025</strong>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <div
+                    class="d-flex justify-content-between mb-1"
+                    style="font-size: 0.82rem"
+                  >
+                    <span>Engagement Progress:</span>
+                    <strong>72%</strong>
+                  </div>
+                  <div class="db-progress-track" style="height: 6px">
+                    <div class="db-progress-fill" style="width: 72%"></div>
+                  </div>
+                </div>
+
+                <div class="alert alert-success p-2" style="font-size: 0.75rem">
+                  <i class="fas fa-circle-check me-1"></i>Client Retention
+                  Index: **97%** ● Net Promoter Score: **9.8/10**
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-xl-6">
+            <div class="db-section-card h-100">
+              <div class="db-section-header">
+                <h6 class="db-section-title">
+                  <i class="fas fa-handshake"></i>Market Entry Framework
+                </h6>
+                <span class="db-status review">Needs Audit</span>
+              </div>
+              <div class="db-section-body">
+                <div class="row g-3 mb-4" style="font-size: 0.82rem">
+                  <div class="col-6">
+                    <span class="text-muted d-block">Client Company</span>
+                    <strong style="color: var(--primary-color)"
+                      >Vantage Group</strong
+                    >
+                  </div>
+                  <div class="col-6">
+                    <span class="text-muted d-block">Contract Value</span>
+                    <strong style="color: var(--accent-color)"
+                      >$1,800,000.00</strong
+                    >
+                  </div>
+                  <div class="col-6 mt-3">
+                    <span class="text-muted d-block">Start Date</span>
+                    <strong>Nov 05, 2023</strong>
+                  </div>
+                  <div class="col-6 mt-3">
+                    <span class="text-muted d-block">End Date</span>
+                    <strong>Jan 08, 2025</strong>
+                  </div>
+                </div>
+
+                <div class="mb-4">
+                  <div
+                    class="d-flex justify-content-between mb-1"
+                    style="font-size: 0.82rem"
+                  >
+                    <span>Engagement Progress:</span>
+                    <strong>45%</strong>
+                  </div>
+                  <div class="db-progress-track" style="height: 6px">
+                    <div class="db-progress-fill" style="width: 45%"></div>
+                  </div>
+                </div>
+
+                <div class="alert alert-warning p-2" style="font-size: 0.75rem">
+                  <i class="fas fa-triangle-exclamation me-1"></i>Client
+                  Retention Index: **78%** ● Delay Flagged on Phase 2
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../assets/js/subpage.js"></script>
+  </body>
+</html>
