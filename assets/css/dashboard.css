@@ -10,6 +10,7 @@ body.dashboard-body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* ── Topbar ── */
@@ -185,6 +186,8 @@ body.dashboard-body {
   display: flex;
   padding-top: 64px;
   min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* ── Sidebar ── */
@@ -346,6 +349,8 @@ body.dashboard-body {
   flex: 1;
   padding: 32px;
   min-height: calc(100vh - 64px);
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* ── Page Header ── */
@@ -619,10 +624,17 @@ body.dashboard-body {
 }
 
 /* ── Table ── */
+.db-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
 .db-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.85rem;
+  min-width: 500px;
 }
 
 .db-table th {
@@ -643,6 +655,7 @@ body.dashboard-body {
   border-bottom: 1px solid rgba(12, 43, 39, 0.05);
   color: var(--text-dark);
   vertical-align: middle;
+  white-space: nowrap;
 }
 
 .db-table tr:last-child td {
@@ -898,6 +911,9 @@ body.dashboard-body {
   .db-main {
     margin-left: 0;
     padding: 20px 16px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   .db-sidebar-toggle {
     display: flex;
@@ -905,9 +921,56 @@ body.dashboard-body {
   .db-topbar-brand {
     display: none;
   }
+  #db-table-section {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .db-section-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .db-topbar {
+    padding: 0 16px;
+    gap: 12px;
+  }
+  .db-topbar-divider,
+  .db-topbar-title {
+    display: none !important;
+  }
+  .db-topbar-actions {
+    gap: 8px;
+  }
+  .db-user-pill {
+    padding: 2px;
+    background: transparent;
+    border-color: transparent;
+    border-radius: 50%;
+  }
+  .db-user-pill > div:not(.db-user-avatar) {
+    display: none !important;
+  }
 }
 
 @media (max-width: 576px) {
+  .db-topbar {
+    padding: 0 12px;
+    gap: 8px;
+  }
+  .db-topbar-logo img {
+    height: 28px;
+  }
+  .db-topbar-icon-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+  }
+  .db-user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+  }
   .db-greeting {
     font-size: 1.3rem;
   }

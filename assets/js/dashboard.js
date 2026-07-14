@@ -706,7 +706,7 @@
     return stats
       .map(
         (s) => `
-      <div class="col-6 col-xl-3">
+      <div class="col-12 col-sm-6 col-xl-3">
         <div class="db-stat-card">
           <div class="db-stat-icon ${s.color}"><i class="fas ${s.icon}"></i></div>
           <div class="db-stat-value">${s.value}</div>
@@ -756,7 +756,7 @@
           <h6 class="db-section-title"><i class="fas fa-table-list"></i>${t.title}</h6>
           <a href="#" class="db-view-all">View All <i class="fas fa-arrow-right"></i></a>
         </div>
-        <div style="overflow-x:auto;">
+        <div class="db-table-wrapper">
           <table class="db-table">
             <thead><tr>${headers}</tr></thead>
             <tbody>${rows}</tbody>
@@ -910,16 +910,16 @@
     const sidebar = document.getElementById("db-sidebar");
     const overlay = document.getElementById("db-sidebar-overlay");
 
-    function openSidebar() {
-      sidebar.classList.add("open");
-      overlay.classList.add("show");
+    function toggleSidebar() {
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
     }
     function closeSidebar() {
       sidebar.classList.remove("open");
       overlay.classList.remove("show");
     }
 
-    if (toggleBtn) toggleBtn.addEventListener("click", openSidebar);
+    if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
     if (overlay) overlay.addEventListener("click", closeSidebar);
 
     // Nav item click

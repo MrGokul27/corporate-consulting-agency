@@ -328,16 +328,16 @@
     const sidebar = document.getElementById("db-sidebar");
     const overlay = document.getElementById("db-sidebar-overlay");
 
-    function openSidebar() {
-      sidebar.classList.add("open");
-      overlay.classList.add("show");
+    function toggleSidebar() {
+      sidebar.classList.toggle("open");
+      overlay.classList.toggle("show");
     }
     function closeSidebar() {
       sidebar.classList.remove("open");
       overlay.classList.remove("show");
     }
 
-    if (toggleBtn) toggleBtn.addEventListener("click", openSidebar);
+    if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
     if (overlay) overlay.addEventListener("click", closeSidebar);
 
     // Logout
