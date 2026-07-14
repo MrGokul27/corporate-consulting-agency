@@ -839,51 +839,68 @@
           : "Good Evening";
 
     // Topbar
-    document.getElementById("db-user-name").textContent = name;
-    document.getElementById("db-user-role-badge").textContent = config.label;
-    document.getElementById("db-user-avatar").textContent = abbr;
-    document.getElementById("db-topbar-title").textContent =
-      config.label + " Portal";
+    const userNameEl = document.getElementById("db-user-name");
+    if (userNameEl) userNameEl.textContent = name;
+
+    const userRoleEl = document.getElementById("db-user-role-badge");
+    if (userRoleEl) userRoleEl.textContent = config.label;
+
+    const userAvatarEl = document.getElementById("db-user-avatar");
+    if (userAvatarEl) userAvatarEl.textContent = abbr;
+
+    const topbarTitleEl = document.getElementById("db-topbar-title");
+    if (topbarTitleEl) topbarTitleEl.textContent = config.label + " Portal";
 
     // Sidebar
-    document.getElementById("db-sidebar-nav").innerHTML = buildSidebar(
-      role,
-      config,
-    );
+    const sidebarNavEl = document.getElementById("db-sidebar-nav");
+    if (sidebarNavEl) sidebarNavEl.innerHTML = buildSidebar(role, config);
 
     // Page header
-    document.getElementById("db-greeting").innerHTML =
-      `${greeting}, <span>${name.split(" ")[0]}</span> 👋`;
-    document.getElementById("db-greeting-sub").textContent =
-      `Welcome to your ${config.label} dashboard. Here's your overview for today.`;
-    document.getElementById("db-date-badge").innerHTML =
-      `<i class="fas fa-calendar-days"></i>${dateStr}`;
+    const greetingEl = document.getElementById("db-greeting");
+    if (greetingEl)
+      greetingEl.innerHTML = `${greeting}, <span>${name.split(" ")[0]}</span> 👋`;
+
+    const greetingSubEl = document.getElementById("db-greeting-sub");
+    if (greetingSubEl)
+      greetingSubEl.textContent = `Welcome to your ${config.label} dashboard. Here's your overview for today.`;
+
+    const dateBadgeEl = document.getElementById("db-date-badge");
+    if (dateBadgeEl)
+      dateBadgeEl.innerHTML = `<i class="fas fa-calendar-days"></i>${dateStr}`;
 
     // Profile card
-    document.getElementById("db-profile-avatar-lg").textContent = abbr;
-    document.getElementById("db-profile-name").textContent = name;
-    document.getElementById("db-profile-email").textContent = email;
-    document.getElementById("db-profile-role-tag").innerHTML =
-      `<i class="fas ${config.icon}"></i>${config.label}`;
+    const profileAvatarEl = document.getElementById("db-profile-avatar-lg");
+    if (profileAvatarEl) profileAvatarEl.textContent = abbr;
+
+    const profileNameEl = document.getElementById("db-profile-name");
+    if (profileNameEl) profileNameEl.textContent = name;
+
+    const profileEmailEl = document.getElementById("db-profile-email");
+    if (profileEmailEl) profileEmailEl.textContent = email;
+
+    const profileRoleEl = document.getElementById("db-profile-role-tag");
+    if (profileRoleEl)
+      profileRoleEl.innerHTML = `<i class="fas ${config.icon}"></i>${config.label}`;
 
     // Stats
-    document.getElementById("db-stats-row").innerHTML = buildStats(
-      config.stats,
-    );
+    const statsRowEl = document.getElementById("db-stats-row");
+    if (statsRowEl) statsRowEl.innerHTML = buildStats(config.stats);
 
     // Table
-    document.getElementById("db-table-section").innerHTML = buildTable(role);
+    const tableSectionEl = document.getElementById("db-table-section");
+    if (tableSectionEl) tableSectionEl.innerHTML = buildTable(role);
 
     // Activity
-    document.getElementById("db-activity-feed").innerHTML = buildActivity(role);
+    const activityFeedEl = document.getElementById("db-activity-feed");
+    if (activityFeedEl) activityFeedEl.innerHTML = buildActivity(role);
 
     // Progress
-    document.getElementById("db-progress-section").innerHTML =
-      buildProgress(role);
+    const progressSectionEl = document.getElementById("db-progress-section");
+    if (progressSectionEl) progressSectionEl.innerHTML = buildProgress(role);
 
     // Quick actions
-    document.getElementById("db-quick-actions").innerHTML =
-      buildQuickActions(role);
+    const quickActionsEl = document.getElementById("db-quick-actions");
+    if (quickActionsEl) quickActionsEl.innerHTML = buildQuickActions(role);
   }
 
   // ── Init ─────────────────────────────────────────────────────
@@ -911,22 +928,25 @@
     const overlay = document.getElementById("db-sidebar-overlay");
 
     function toggleSidebar() {
-      sidebar.classList.toggle("open");
-      overlay.classList.toggle("show");
+      if (sidebar) sidebar.classList.toggle("open");
+      if (overlay) overlay.classList.toggle("show");
     }
     function closeSidebar() {
-      sidebar.classList.remove("open");
-      overlay.classList.remove("show");
+      if (sidebar) sidebar.classList.remove("open");
+      if (overlay) overlay.classList.remove("show");
     }
 
     if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
     if (overlay) overlay.addEventListener("click", closeSidebar);
 
     // Nav item click
-    document
-      .getElementById("db-sidebar-nav")
-      .addEventListener("click", function (e) {
-        const item = e.target.closest(".db-nav-item");
+    const sidebarNav = document.getElementById("db-sidebar-nav");
+    if (sidebarNav) {
+      sidebarNav.addEventListener("click", function (e) {
+        const item =
+          e.target && typeof e.target.closest === "function"
+            ? e.target.closest(".db-nav-item")
+            : null;
         if (!item) return;
         if (item.getAttribute("href") === "#") {
           e.preventDefault();
@@ -937,15 +957,17 @@
         item.classList.add("active");
         if (window.innerWidth < 992) closeSidebar();
       });
+    }
 
     // Logout
-    document
-      .getElementById("db-logout-btn")
-      .addEventListener("click", function (e) {
+    const logoutBtn = document.getElementById("db-logout-btn");
+    if (logoutBtn) {
+      logoutBtn.addEventListener("click", function (e) {
         e.preventDefault();
         sessionStorage.removeItem("stackly_user");
         window.location.href = "login.html";
       });
+    }
 
     // Date badge
     document.getElementById("db-date-badge");
@@ -955,21 +977,24 @@
   (function () {
     function get404Path() {
       const path = window.location.pathname;
-      const segments = path.split('/');
-      const pagesIndex = segments.indexOf('pages');
+      const segments = path.split("/");
+      const pagesIndex = segments.indexOf("pages");
       if (pagesIndex === -1) {
-        return 'pages/404.html';
+        return "pages/404.html";
       }
       const depth = segments.length - 1 - pagesIndex - 1;
       if (depth <= 0) {
-        return '404.html';
+        return "404.html";
       }
-      return '../'.repeat(depth) + '404.html';
+      return "../".repeat(depth) + "404.html";
     }
 
     document.addEventListener("click", function (e) {
       // 1. Handle anchor clicks
-      const anchor = e.target.closest("a");
+      const anchor =
+        e.target && typeof e.target.closest === "function"
+          ? e.target.closest("a")
+          : null;
       if (anchor) {
         const href = anchor.getAttribute("href");
         if (
@@ -1006,7 +1031,10 @@
       }
 
       // 2. Handle button clicks
-      const button = e.target.closest("button");
+      const button =
+        e.target && typeof e.target.closest === "function"
+          ? e.target.closest("button")
+          : null;
       if (button) {
         // Exclude sidebar toggles, logout buttons, and Bootstrap/tab triggers
         if (

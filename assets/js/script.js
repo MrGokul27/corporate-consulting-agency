@@ -204,7 +204,14 @@ function initScrollHeader() {
     navCollapse.appendChild(closeBtn);
 
     closeBtn.addEventListener("click", () => {
-      const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+      let bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+      if (
+        !bsCollapse &&
+        typeof bootstrap !== "undefined" &&
+        bootstrap.Collapse
+      ) {
+        bsCollapse = new bootstrap.Collapse(navCollapse, { toggle: false });
+      }
       if (bsCollapse) bsCollapse.hide();
     });
   }
@@ -233,7 +240,14 @@ function initScrollHeader() {
   navCollapse.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       if (window.innerWidth < 992) {
-        const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+        let bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+        if (
+          !bsCollapse &&
+          typeof bootstrap !== "undefined" &&
+          bootstrap.Collapse
+        ) {
+          bsCollapse = new bootstrap.Collapse(navCollapse, { toggle: false });
+        }
         if (bsCollapse) bsCollapse.hide();
       }
     });
@@ -278,7 +292,10 @@ function initContactForm() {
   const isSubpage = window.location.pathname.includes("/pages/");
 
   document.addEventListener("submit", function (e) {
-    const form = e.target.closest(".needs-validation");
+    const form =
+      e.target && typeof e.target.closest === "function"
+        ? e.target.closest(".needs-validation")
+        : null;
     if (!form) return;
 
     if (!form.checkValidity()) {

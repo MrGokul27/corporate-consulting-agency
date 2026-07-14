@@ -55,7 +55,12 @@
               <span class="input-group-text auth-input-icon"
                 ><i class="fas fa-user-tie"></i
               ></span>
-              <select class="form-select auth-select" id="loginRole" required>
+              <select
+                class="form-select auth-select"
+                id="loginRole"
+                name="role"
+                required
+              >
                 <option value="" disabled selected>Select your role</option>
                 <option value="executive">Executive / C-Suite</option>
                 <option value="manager">Senior Manager</option>
@@ -80,6 +85,8 @@
                 type="email"
                 class="form-control auth-input"
                 id="loginEmail"
+                name="email"
+                autocomplete="email"
                 placeholder="you@company.com"
                 required
               />
@@ -102,6 +109,8 @@
                 type="password"
                 class="form-control auth-input"
                 id="loginPassword"
+                name="password"
+                autocomplete="current-password"
                 placeholder="Enter your password"
                 required
                 minlength="6"

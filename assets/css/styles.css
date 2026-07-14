@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
 /* =============================================
    PRELOADER — Premium Rebuild
    ============================================= */
@@ -431,8 +433,6 @@
    END PRELOADER
    ============================================= */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
-
 /* Color Variables & Custom Design System */
 :root {
   --primary-color: #0c2b27; /* Deep Forest Emerald Teal */
@@ -593,15 +593,28 @@ body {
     display: flex !important;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 70px 24px 50px 24px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.35s ease;
+    transition:
+      opacity 0.35s ease,
+      visibility 0.35s ease;
   }
 
-  .navbar-collapse.show {
+  .navbar-collapse.show,
+  body.menu-open .navbar-collapse {
     opacity: 1;
+    visibility: visible;
     pointer-events: all;
+  }
+
+  .navbar-collapse.collapsing {
+    height: 100vh !important;
+    margin: 0 !important;
   }
 
   .navbar-collapse .navbar-nav {
@@ -633,7 +646,7 @@ body {
 
   /* Close button inside mobile menu */
   .mobile-menu-close {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
     background: none;
@@ -658,7 +671,7 @@ body {
 
   /* Logo inside mobile menu */
   .mobile-menu-logo {
-    position: absolute;
+    position: fixed;
     top: 22px;
     left: 20px;
   }
@@ -1287,6 +1300,13 @@ body {
 
 /* Responsive Overrides */
 @media (max-width: 991px) {
+  .hero-slider-section {
+    height: auto !important;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-bottom: 80px;
+    overflow: visible !important;
+  }
   .hero-title {
     font-size: 2.5rem;
   }

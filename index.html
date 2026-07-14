@@ -1666,12 +1666,16 @@
                 <form class="needs-validation" novalidate>
                   <div class="row g-3">
                     <div class="col-md-6">
-                      <label class="form-label text-primary fw-semibold fs-7"
+                      <label
+                        for="fullName"
+                        class="form-label text-primary fw-semibold fs-7"
                         >Full Name</label
                       >
                       <input
                         type="text"
                         id="fullName"
+                        name="fullName"
+                        autocomplete="name"
                         class="form-control bg-light border-light py-2.5 fs-7"
                         placeholder="e.g. John Carter"
                         maxlength="16"
@@ -1682,11 +1686,16 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label text-primary fw-semibold fs-7"
+                      <label
+                        for="email"
+                        class="form-label text-primary fw-semibold fs-7"
                         >Corporate Email</label
                       >
                       <input
                         type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
                         class="form-control bg-light border-light py-2.5 fs-7"
                         placeholder="e.g. jcarter@company.com"
                         required
@@ -1696,12 +1705,16 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label text-primary fw-semibold fs-7"
+                      <label
+                        for="companyName"
+                        class="form-label text-primary fw-semibold fs-7"
                         >Company Name</label
                       >
                       <input
                         type="text"
                         id="companyName"
+                        name="companyName"
+                        autocomplete="organization"
                         class="form-control bg-light border-light py-2.5 fs-7"
                         placeholder="e.g. Acme Corporation"
                         required
@@ -1711,10 +1724,14 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label class="form-label text-primary fw-semibold fs-7"
+                      <label
+                        for="interest"
+                        class="form-label text-primary fw-semibold fs-7"
                         >Core Area of Interest</label
                       >
                       <select
+                        id="interest"
+                        name="interest"
                         class="form-select bg-light border-light py-2.5 fs-7"
                         required
                       >
@@ -1733,10 +1750,14 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <label class="form-label text-primary fw-semibold fs-7"
+                      <label
+                        for="objective"
+                        class="form-label text-primary fw-semibold fs-7"
                         >Tell us about your organization's objective</label
                       >
                       <textarea
+                        id="objective"
+                        name="objective"
                         class="form-control bg-light border-light py-2.5 fs-7"
                         rows="4"
                         placeholder="Briefly describe what challenges your company is facing or your goals..."

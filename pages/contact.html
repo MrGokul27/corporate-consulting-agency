@@ -175,12 +175,16 @@
               >
                 <div class="row g-3">
                   <div class="col-md-6">
-                    <label class="form-label text-primary fw-semibold fs-7"
+                    <label
+                      for="fullName"
+                      class="form-label text-primary fw-semibold fs-7"
                       >Full Name</label
                     >
                     <input
                       type="text"
                       id="fullName"
+                      name="fullName"
+                      autocomplete="name"
                       class="form-control bg-white border-light py-2.5 fs-7"
                       placeholder="e.g. Sarah Jenkins"
                       required
@@ -189,11 +193,16 @@
                     <div class="invalid-feedback">Please enter your name.</div>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label text-primary fw-semibold fs-7"
+                    <label
+                      for="email"
+                      class="form-label text-primary fw-semibold fs-7"
                       >Corporate Email</label
                     >
                     <input
                       type="email"
+                      id="email"
+                      name="email"
+                      autocomplete="email"
                       class="form-control bg-white border-light py-2.5 fs-7"
                       placeholder="e.g. s.jenkins@company.com"
                       required
@@ -203,12 +212,16 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label text-primary fw-semibold fs-7"
+                    <label
+                      for="companyName"
+                      class="form-label text-primary fw-semibold fs-7"
                       >Company Name</label
                     >
                     <input
                       type="text"
                       id="companyName"
+                      name="companyName"
+                      autocomplete="organization"
                       class="form-control bg-white border-light py-2.5 fs-7"
                       placeholder="e.g. Nexa Corp"
                       required
@@ -218,10 +231,14 @@
                     </div>
                   </div>
                   <div class="col-md-6">
-                    <label class="form-label text-primary fw-semibold fs-7"
+                    <label
+                      for="interest"
+                      class="form-label text-primary fw-semibold fs-7"
                       >Consulting Segment</label
                     >
                     <select
+                      id="interest"
+                      name="interest"
                       class="form-select bg-white border-light py-2.5 fs-7"
                       required
                     >
@@ -240,10 +257,14 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <label class="form-label text-primary fw-semibold fs-7"
+                    <label
+                      for="objective"
+                      class="form-label text-primary fw-semibold fs-7"
                       >Overview of Advisory Requirement</label
                     >
                     <textarea
+                      id="objective"
+                      name="objective"
                       class="form-control bg-white border-light py-2.5 fs-7"
                       rows="5"
                       placeholder="Briefly outline your structural requirements or merger timeline..."

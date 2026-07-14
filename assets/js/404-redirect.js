@@ -16,7 +16,10 @@
 
   document.addEventListener("click", function (e) {
     // Walk up the DOM to find the closest anchor tag
-    const anchor = e.target.closest("a");
+    const anchor =
+      e.target && typeof e.target.closest === "function"
+        ? e.target.closest("a")
+        : null;
     if (!anchor) return;
 
     const href = anchor.getAttribute("href");

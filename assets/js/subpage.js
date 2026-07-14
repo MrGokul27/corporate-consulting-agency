@@ -329,12 +329,12 @@
     const overlay = document.getElementById("db-sidebar-overlay");
 
     function toggleSidebar() {
-      sidebar.classList.toggle("open");
-      overlay.classList.toggle("show");
+      if (sidebar) sidebar.classList.toggle("open");
+      if (overlay) overlay.classList.toggle("show");
     }
     function closeSidebar() {
-      sidebar.classList.remove("open");
-      overlay.classList.remove("show");
+      if (sidebar) sidebar.classList.remove("open");
+      if (overlay) overlay.classList.remove("show");
     }
 
     if (toggleBtn) toggleBtn.addEventListener("click", toggleSidebar);
@@ -381,7 +381,10 @@
 
     document.addEventListener("click", function (e) {
       // 1. Handle anchor clicks
-      const anchor = e.target.closest("a");
+      const anchor =
+        e.target && typeof e.target.closest === "function"
+          ? e.target.closest("a")
+          : null;
       if (anchor) {
         const href = anchor.getAttribute("href");
         if (
@@ -418,7 +421,10 @@
       }
 
       // 2. Handle button clicks
-      const button = e.target.closest("button");
+      const button =
+        e.target && typeof e.target.closest === "function"
+          ? e.target.closest("button")
+          : null;
       if (button) {
         // Exclude sidebar toggles, logout buttons, and Bootstrap/tab triggers
         if (

@@ -110,16 +110,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       loginForm.classList.add("was-validated");
 
-      const role = document.getElementById("loginRole").value;
-      const email = document.getElementById("loginEmail").value;
+      const roleEl = document.getElementById("loginRole");
+      const emailEl = document.getElementById("loginEmail");
+      const role = roleEl ? roleEl.value : "";
+      const email = emailEl ? emailEl.value : "";
 
       // Save user data to sessionStorage
       sessionStorage.setItem("stackly_user", JSON.stringify({ role, email }));
 
       const btn = loginForm.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.innerHTML =
-        '<i class="fas fa-spinner fa-spin me-2"></i>Signing in...';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML =
+          '<i class="fas fa-spinner fa-spin me-2"></i>Signing in...';
+      }
 
       setTimeout(() => {
         window.location.href = "dashboard.html";
@@ -135,27 +139,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmFeedback = document.getElementById("confirmFeedback");
 
     // Live confirm password match check
-    regConfirmPassword.addEventListener("input", function () {
-      if (
-        regConfirmPassword.value &&
-        regPassword.value !== regConfirmPassword.value
-      ) {
-        regConfirmPassword.setCustomValidity("Passwords do not match.");
-        confirmFeedback.textContent = "Passwords do not match.";
-      } else {
-        regConfirmPassword.setCustomValidity("");
-        confirmFeedback.textContent = "Passwords do not match.";
-      }
-    });
+    if (regConfirmPassword && regPassword) {
+      regConfirmPassword.addEventListener("input", function () {
+        if (
+          regConfirmPassword.value &&
+          regPassword.value !== regConfirmPassword.value
+        ) {
+          regConfirmPassword.setCustomValidity("Passwords do not match.");
+          if (confirmFeedback)
+            confirmFeedback.textContent = "Passwords do not match.";
+        } else {
+          regConfirmPassword.setCustomValidity("");
+          if (confirmFeedback)
+            confirmFeedback.textContent = "Passwords do not match.";
+        }
+      });
+    }
 
     registerForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
       // Re-check confirm password match before submit
-      if (regPassword.value !== regConfirmPassword.value) {
-        regConfirmPassword.setCustomValidity("Passwords do not match.");
-      } else {
-        regConfirmPassword.setCustomValidity("");
+      if (regPassword && regConfirmPassword) {
+        if (regPassword.value !== regConfirmPassword.value) {
+          regConfirmPassword.setCustomValidity("Passwords do not match.");
+        } else {
+          regConfirmPassword.setCustomValidity("");
+        }
       }
 
       if (!registerForm.checkValidity()) {
@@ -167,9 +177,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Submit animation then redirect to login
       const btn = registerForm.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.innerHTML =
-        '<i class="fas fa-spinner fa-spin me-2"></i>Creating account...';
+      if (btn) {
+        btn.disabled = true;
+        btn.innerHTML =
+          '<i class="fas fa-spinner fa-spin me-2"></i>Creating account...';
+      }
 
       setTimeout(() => {
         window.location.href = "login.html";
