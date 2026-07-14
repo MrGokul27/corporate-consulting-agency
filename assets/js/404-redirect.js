@@ -2,9 +2,16 @@
   // Resolve the correct path to 404.html based on current page depth
   function get404Path() {
     const path = window.location.pathname;
-    // Pages inside /pages/ directory need to go up one level
-    const isSubpage = path.includes("/pages/");
-    return isSubpage ? "404.html" : "pages/404.html";
+    const segments = path.split("/");
+    const pagesIndex = segments.indexOf("pages");
+    if (pagesIndex === -1) {
+      return "pages/404.html";
+    }
+    const depth = segments.length - 1 - pagesIndex - 1;
+    if (depth <= 0) {
+      return "404.html";
+    }
+    return "../".repeat(depth) + "404.html";
   }
 
   document.addEventListener("click", function (e) {

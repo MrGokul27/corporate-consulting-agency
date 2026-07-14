@@ -13,7 +13,7 @@
         { id: "portfolio", icon: "fa-briefcase", label: "Portfolio" },
         { section: "Management" },
         { id: "team", icon: "fa-users", label: "Team", badge: "12" },
-        { id: "reports", icon: "fa-file-chart-line", label: "Board Reports" },
+        { id: "reports", icon: "fa-file-lines", label: "Board Reports" },
         { id: "strategy", icon: "fa-chess", label: "Strategy Map" },
         { section: "Finance" },
         { id: "financials", icon: "fa-coins", label: "Financials" },
@@ -77,7 +77,7 @@
         { section: "Reports" },
         {
           id: "reports",
-          icon: "fa-file-chart-column",
+          icon: "fa-file-lines",
           label: "Reports",
           badge: "2",
         },
@@ -362,4 +362,83 @@
       });
     }
   });
+
+  // ── 404 Redirect Handler for Empty Links and Buttons ──
+  (function () {
+    function get404Path() {
+      const path = window.location.pathname;
+      const segments = path.split("/");
+      const pagesIndex = segments.indexOf("pages");
+      if (pagesIndex === -1) {
+        return "pages/404.html";
+      }
+      const depth = segments.length - 1 - pagesIndex - 1;
+      if (depth <= 0) {
+        return "404.html";
+      }
+      return "../".repeat(depth) + "404.html";
+    }
+
+    document.addEventListener("click", function (e) {
+      // 1. Handle anchor clicks
+      const anchor = e.target.closest("a");
+      if (anchor) {
+        const href = anchor.getAttribute("href");
+        if (
+          href === "#" ||
+          href === "" ||
+          href === null ||
+          href === "javascript:void(0)" ||
+          href === "javascript:;"
+        ) {
+          // Allow Bootstrap toggles & dismissals
+          if (
+            anchor.hasAttribute("data-bs-toggle") ||
+            anchor.hasAttribute("data-bs-target") ||
+            anchor.hasAttribute("data-bs-dismiss")
+          ) {
+            return;
+          }
+
+          // Allow accordion buttons, role tabs, active links, sidebar nav items, and back-to-top
+          if (
+            anchor.classList.contains("accordion-button") ||
+            anchor.getAttribute("role") === "tab" ||
+            anchor.classList.contains("active") ||
+            anchor.classList.contains("db-nav-item") ||
+            anchor.classList.contains("back-to-top")
+          ) {
+            return;
+          }
+
+          e.preventDefault();
+          window.location.href = get404Path();
+          return;
+        }
+      }
+
+      // 2. Handle button clicks
+      const button = e.target.closest("button");
+      if (button) {
+        // Exclude sidebar toggles, logout buttons, and Bootstrap/tab triggers
+        if (
+          button.id === "db-sidebar-toggle" ||
+          button.classList.contains("db-sidebar-toggle") ||
+          button.id === "db-logout-btn" ||
+          button.classList.contains("db-logout-btn") ||
+          button.hasAttribute("data-bs-toggle") ||
+          button.hasAttribute("data-bs-target") ||
+          button.hasAttribute("data-bs-dismiss") ||
+          button.getAttribute("role") === "tab" ||
+          button.classList.contains("accordion-button") ||
+          button.classList.contains("btn-close")
+        ) {
+          return;
+        }
+
+        e.preventDefault();
+        window.location.href = get404Path();
+      }
+    });
+  })();
 })();
