@@ -15,6 +15,30 @@ document.addEventListener("DOMContentLoaded", function () {
   const isSubpage = window.location.pathname.includes("/pages/");
   const pathPrefix = isSubpage ? "../" : "./";
 
+  function initFooterSubscribeForm() {
+    const isSubpage = window.location.pathname.includes("/pages/");
+    const form = document.getElementById("footerSubscribeForm");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+
+      setTimeout(() => {
+        window.location.href = isSubpage ? "404.html" : "pages/404.html";
+      }, 1500);
+    });
+  }
+
   // 1. Load Header Component
   const headerPlaceholder = document.getElementById("header-placeholder");
   if (headerPlaceholder) {
@@ -61,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const newFooter = document.querySelector(".site-footer");
         if (newFooter) {
           adjustComponentLinks(newFooter, isSubpage);
+          initFooterSubscribeForm();
         }
       })
       .catch((error) => {
@@ -250,7 +275,8 @@ function initBackToTop() {
  * Sets up contact form submit listeners for Bootstrap style validation.
  */
 function initContactForm() {
-  // Delegate form validation
+  const isSubpage = window.location.pathname.includes("/pages/");
+
   document.addEventListener("submit", function (e) {
     const form = e.target.closest(".needs-validation");
     if (!form) return;
@@ -259,27 +285,75 @@ function initContactForm() {
       e.preventDefault();
       e.stopPropagation();
     } else {
-      // Simulate success for demo
       e.preventDefault();
+
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
+
       submitBtn.disabled = true;
       submitBtn.innerHTML =
         '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
 
       setTimeout(() => {
-        alert(
-          "Thank you! Your consultation request has been sent. A Stackly partner will reach out to you shortly.",
-        );
-        form.reset();
-        form.classList.remove("was-validated");
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
+        window.location.href = isSubpage ? "404.html" : "pages/404.html";
       }, 1500);
     }
+
     form.classList.add("was-validated");
   });
 }
+
+function allowOnlyLetters(input) {
+  if (!input) return;
+
+  input.addEventListener("keydown", function (e) {
+    const allowedKeys = [
+      "Backspace",
+      "Delete",
+      "Tab",
+      "Escape",
+      "Enter",
+      "ArrowLeft",
+      "ArrowRight",
+      "ArrowUp",
+      "ArrowDown",
+      "Home",
+      "End",
+      " ",
+    ];
+
+    // Allow Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+    if (e.ctrlKey && ["a", "c", "v", "x"].includes(e.key.toLowerCase())) {
+      return;
+    }
+
+    if (allowedKeys.includes(e.key)) return;
+
+    // Allow only letters
+    if (!/^[a-zA-Z]$/.test(e.key)) {
+      e.preventDefault();
+    }
+  });
+
+  // Handle paste
+  input.addEventListener("paste", function (e) {
+    e.preventDefault();
+
+    const pasted = (e.clipboardData || window.clipboardData).getData("text");
+    const cleaned = pasted.replace(/[^a-zA-Z ]/g, "");
+
+    document.execCommand("insertText", false, cleaned);
+  });
+
+  // Handle drag & drop / autocomplete / mobile keyboards
+  input.addEventListener("input", function () {
+    this.value = this.value.replace(/[^a-zA-Z ]/g, "");
+  });
+}
+
+// Apply validation
+allowOnlyLetters(document.getElementById("fullName"));
+allowOnlyLetters(document.getElementById("companyName"));
 
 /**
  * Native Scroll Reveal Animation using IntersectionObserver.

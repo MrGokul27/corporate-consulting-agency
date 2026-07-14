@@ -2063,6 +2063,10 @@ body {
   }
 }
 
+.breadcrumb-item + .breadcrumb-item::before {
+  color: #fff !important;
+}
+
 /* ==========================================================================
    8. PREMIUM SCROLL-REVEAL & PAGE ANIMATIONS
    ========================================================================== */
