@@ -109,16 +109,21 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       loginForm.classList.add("was-validated");
-      // Simulate login success (replace with real auth logic)
+
+      const role = document.getElementById("loginRole").value;
+      const email = document.getElementById("loginEmail").value;
+
+      // Save user data to sessionStorage
+      sessionStorage.setItem("stackly_user", JSON.stringify({ role, email }));
+
       const btn = loginForm.querySelector('button[type="submit"]');
       btn.disabled = true;
       btn.innerHTML =
         '<i class="fas fa-spinner fa-spin me-2"></i>Signing in...';
+
       setTimeout(() => {
-        btn.disabled = false;
-        btn.innerHTML =
-          '<span>Sign In</span><i class="fas fa-arrow-right ms-2"></i>';
-      }, 1500);
+        window.location.href = "dashboard.html";
+      }, 1000);
     });
   }
 
